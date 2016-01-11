@@ -1,0 +1,2 @@
+hola
+<?php echo $body; ?>

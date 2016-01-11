@@ -1,0 +1,22 @@
+{
+  "name": "wouterrr/a1",
+  "type": "kohana-module",
+  "description": "Authentication for Kohana",
+  "keywords": ["kohana", "authentication"],
+  "homepage": "https://github.com/Wouterrr/A1",
+  "license": "BEER-WARE",
+  "authors": [
+    {
+      "name": "Wouter Wiegmans"
+    }
+  ],
+  "support": {
+    "issues":   "https://github.com/Wouterrr/A1/issues",
+    "source":   "https://github.com/Wouterrr/A1"
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "kohana/core": ">=3.3",
+    "php": ">=5.3.0"
+  }
+}
