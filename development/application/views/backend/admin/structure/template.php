@@ -1,2 +1,0 @@
-hola
-<?php echo $body; ?>

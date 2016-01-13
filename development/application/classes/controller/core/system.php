@@ -4,13 +4,14 @@ class Controller_Core_System extends Controller {
 	
 	protected $template;
 	protected $body;
-	protected $simple = FALSE;
+	protected $simple;
 	protected $session;
 
 	public function before()
 	{
 		parent::before();
 
+		$this->simple = FALSE;
 		try
 		{
 			$this->session = Session::instance();

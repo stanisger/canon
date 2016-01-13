@@ -31,7 +31,7 @@ switch(Kohana::$environment)
 			(
 				'default' => array
 				(
-					'type'       => 'mysql',
+					'type'       => 'MySQLi',
 					'connection' => array(
 
 						'hostname'   => '',

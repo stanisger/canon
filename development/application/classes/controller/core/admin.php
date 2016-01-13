@@ -3,15 +3,16 @@
 class Controller_Core_Admin extends Controller_Core_System {
 		
 	protected $a1;
-	protected $authention = TRUE;
-	protected $simple = FALSE;
+	protected $authention;
 	protected $userdata;
 
 	public function before()
 	{
 		parent::before();
+		$this->authention = TRUE;
 		$this->a1 = A1::instance();
-		$this->template = View::factory("backend/admin/structure/template")->set(array(
+
+		$this->template = View::factory("admin/structure/template")->set(array(
 			));	
 
 		if($this->a1->logged_in()){

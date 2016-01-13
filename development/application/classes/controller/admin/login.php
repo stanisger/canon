@@ -2,13 +2,13 @@
 
 class Controller_Admin_Login extends Controller_Core_Admin {
 
-	public $canon;
+	public $usuarios;
 	public function before()
 	{
 		parent::before();
 		$this->authention = FALSE;
 		$this->simple = TRUE;
-		$this->canon = new Model_Canon;
+		$this->usuarios = new Model_Usuarios;
 	}
 
 	public function action_index()
@@ -19,19 +19,19 @@ class Controller_Admin_Login extends Controller_Core_Admin {
 		{
 			$post = $this->_validate();
 			$msg = "Todos los campos son requeridos. . .";
-			if ($post->check() AND Security::check($post['security_token']))
+			if ($post->check() AND Security::check($post['token']))
 			{
 				$msg = "Verifique sus datos de acceso. . .";
-				if ($this->a1->login($post['correo_electronico'],$post['contrasena'],FALSE))
+				if ($this->a1->login($post['email'],$post['password'],FALSE))
 				{	
 					$msg = "asdsaddd";
-					$this->request->redirect(URL::base()."admin");
+					//$this->request->redirect(URL::base()."admin");
 				}
 			}	
 		}
 		
-		$this->body = View::factory("backend/admin/login")->set(array(
-			"error"	=> $msg
+		$this->body = View::factory("admin/login")->set(array(
+			"msg"	=> $msg
 		));
 
 	}
@@ -39,15 +39,15 @@ class Controller_Admin_Login extends Controller_Core_Admin {
 	public function action_logout()
 	{
 		$this->a1->logout();
-		$this->request->redirect(URL::base()."admin");
+		$this->redirect(URL::base()."admin/login");
 	}
 	
 	public function _validate()
 	{
 		return Validation::factory($_POST)
-			->rule("correo_electronico","email")
-			->rule("contrasena","not_empty")
-			->rule("security_token","not_empty");
+			->rule("email","email")
+			->rule("password","not_empty")
+			->rule("token","not_empty");
 	}
 
 }

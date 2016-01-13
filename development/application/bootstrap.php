@@ -3,50 +3,65 @@
 // -- Environment setup --------------------------------------------------------
 
 // Load the core Kohana class
-require SYSPATH.'classes/kohana/core'.EXT;
+require SYSPATH.'classes/Kohana/Core'.EXT;
 
-if (is_file(APPPATH.'classes/kohana'.EXT))
+if (is_file(APPPATH.'classes/Kohana'.EXT))
 {
 	// Application extends the core
-	require APPPATH.'classes/kohana'.EXT;
+	require APPPATH.'classes/Kohana'.EXT;
 }
 else
 {
 	// Load empty core extension
-	require SYSPATH.'classes/kohana'.EXT;
+	require SYSPATH.'classes/Kohana'.EXT;
 }
 
 /**
  * Set the default time zone.
  *
- * @see  http://kohanaframework.org/guide/using.configuration
- * @see  http://php.net/timezones
+ * @link http://kohanaframework.org/guide/using.configuration
+ * @link http://www.php.net/manual/timezones
  */
 date_default_timezone_set('America/Chicago');
 
 /**
  * Set the default locale.
  *
- * @see  http://kohanaframework.org/guide/using.configuration
- * @see  http://php.net/setlocale
+ * @link http://kohanaframework.org/guide/using.configuration
+ * @link http://www.php.net/manual/function.setlocale
  */
 setlocale(LC_ALL, 'en_US.utf-8');
 
 /**
  * Enable the Kohana auto-loader.
  *
- * @see  http://kohanaframework.org/guide/using.autoloading
- * @see  http://php.net/spl_autoload_register
+ * @link http://kohanaframework.org/guide/using.autoloading
+ * @link http://www.php.net/manual/function.spl-autoload-register
  */
 spl_autoload_register(array('Kohana', 'auto_load'));
 
 /**
+ * Optionally, you can enable a compatibility auto-loader for use with
+ * older modules that have not been updated for PSR-0.
+ *
+ * It is recommended to not enable this unless absolutely necessary.
+ */
+//spl_autoload_register(array('Kohana', 'auto_load_lowercase'));
+
+/**
  * Enable the Kohana auto-loader for unserialization.
  *
- * @see  http://php.net/spl_autoload_call
- * @see  http://php.net/manual/var.configuration.php#unserialize-callback-func
+ * @link http://www.php.net/manual/function.spl-autoload-call
+ * @link http://www.php.net/manual/var.configuration#unserialize-callback-func
  */
 ini_set('unserialize_callback_func', 'spl_autoload_call');
+
+/**
+ * Set the mb_substitute_character to "none"
+ *
+ * @link http://www.php.net/manual/function.mb-substitute-character.php
+ */
+mb_substitute_character('none');
 
 // -- Configuration and initialization -----------------------------------------
 
@@ -55,6 +70,12 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
  */
 I18n::lang('en-us');
 Cookie::$salt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+if (isset($_SERVER['SERVER_PROTOCOL']))
+{
+	// Replace the default protocol.
+	HTTP::$protocol = $_SERVER['SERVER_PROTOCOL'];
+}
+
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
  *
@@ -75,9 +96,11 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - string   index_file  name of your index file, usually "index.php"       index.php
  * - string   charset     internal character set used for input and output   utf-8
  * - string   cache_dir   set the internal cache directory                   APPPATH/cache
+ * - integer  cache_life  lifetime, in seconds, of items cached              60
  * - boolean  errors      enable or disable error handling                   TRUE
  * - boolean  profile     enable or disable internal profiling               TRUE
  * - boolean  caching     enable or disable internal caching                 FALSE
+ * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::$environment = ($_SERVER['SERVER_NAME'] == "localhost")
 						? Kohana::DEVELOPMENT
@@ -102,13 +125,11 @@ Kohana::$config->attach(new Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	 'cache'      => MODPATH.'cache',      	// Caching with multiple backends
-	 'database'   => MODPATH.'database',   	// Database access
-	 //'image'      => MODPATH.'image',      	// Image manipulation
-	 'orm'        => MODPATH.'orm',         // Object Relationship Mapping
-	 //'email'	  => MODPATH.'email',	  	//send mails
-	 'a1'		  => MODPATH.'a1',	  		//send mails
-	 'mysqli'	  => MODPATH.'mysqli',
+	 'cache'      => MODPATH.'cache',      // Caching with multiple backends
+	 'database'   => MODPATH.'database',   // Database access
+	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	 "mysqli"	  => MODPATH.'mysqli',
+	 "A1"		  => MODPATH."A1",
 	));
 
 /**
@@ -120,11 +141,11 @@ Route::set('admin', '<directory>(/<controller>(/<action>(/<id>)))',
 				'directory' => 'errors|admin',
 		))
 		->defaults(array(
-				'controller' => 'welcome',
+				'controller' => 'login',
 				'action'     => 'index',
 		));
-
-Route::set('default', '(<controller>(/<action>(/<id>(/<page>))))')
+		
+Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'welcome',
 		'action'     => 'index',

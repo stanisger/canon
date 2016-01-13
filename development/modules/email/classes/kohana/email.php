@@ -11,7 +11,7 @@
 class Kohana_Email {
 
 	// Current module version
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * @var  object  Swiftmailer instance
@@ -130,8 +130,7 @@ class Kohana_Email {
 	public function __construct($subject = NULL, $message = NULL, $type = NULL)
 	{
 		// Create a new message, match internal character set
-		$this->_message = Swift_Message::newInstance()
-			;
+		$this->_message = Swift_Message::newInstance();
 
 		if ($subject)
 		{
@@ -362,6 +361,17 @@ class Kohana_Email {
 	}
 
 	/**
+	 * Embed an image
+	 *
+	 * @param   string  image path
+	 * @return  Embedded image
+	 */
+	public function embed($image_path)
+	{
+		return $this->_message->embed(Swift_Image::fromPath($image_path));
+	}
+
+	/**
 	 * Attach content to be sent as a file.
 	 *
 	 * @param   binary  file contents
@@ -383,14 +393,54 @@ class Kohana_Email {
 	}
 
 	/**
-	 * Send the email. Failed recipients can be collected by passing an array.
+	 * Send the email.
 	 *
-	 * @param   array   failed recipient list, by reference
-	 * @return  boolean
+	 * !! Failed recipients can be collected by using the second parameter.
+	 *
+	 * @param   array    failed recipient list, by reference
+	 * @return  integer  number of emails sent
 	 */
 	public function send(array & $failed = NULL)
 	{
 		return Email::mailer()->send($this->_message, $failed);
+	}
+
+	/**
+	 * Send the email to a batch of addresses.
+	 *
+	 * !! Failed recipients can be collected by using the second parameter.
+	 *
+	 * @param   array    failed recipient list, by reference
+	 * @return  integer  number of emails sent
+	 */
+	public function batch(array $to, array & $failed = NULL)
+	{
+		// Get a copy of the current message
+		$message = clone $this->_message;
+
+		// Load the mailer instance
+		$mailer = Email::mailer();
+
+		// Count the total number of messages sent
+		$total = 0;
+
+		foreach ($to as $email => $name)
+		{
+			if (ctype_digit((string) $email))
+			{
+				// Only an email address was provided
+				$email = $name;
+				$name  = NULL;
+			}
+
+			// Set the To addre
+			$message->setTo($email, $name);
+
+			// Send this email
+			$total += $mailer->send($message, $failed);
+		}
+
+		return $total;
 	}
 
 } // End email
@@ -398,5 +448,9 @@ class Kohana_Email {
 // Load Swiftmailer
 require Kohana::find_file('vendor/swiftmailer', 'lib/swift_required');
 
-// Set the default character set for everything
-Swift_Preferences::getInstance()->setCharset(Kohana::$charset);
+function swiftmailer_configurator() {
+	// Set the default character set for everything
+	Swift_Preferences::getInstance()->setCharset(Kohana::$charset);
+}
+
+Swift::init('swiftmailer_configurator');

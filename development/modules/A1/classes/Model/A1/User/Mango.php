@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct access allowed.');
+<?php
 
 /* 
  * Abstract A1 Authentication User Model
@@ -24,20 +24,20 @@ abstract class Model_A1_User_Mango extends Mango {
 	// Specify config name so password gets hashed correctly (with the right salt pattern) when set in user
 	protected $_name = 'a1';
 
-	public function create($options = array())
+	public function create($safe = TRUE)
 	{
 		$this->password = $this->hash($this->password);
-		return parent::create($options);
+		return parent::create($safe);
 	}
 
-	public function update($criteria = array(), $options = array())
+	public function update( $criteria = array(), $safe = TRUE)
 	{
-		if (isset($this->_changed['password']))
+		if ( isset($this->_changed['password']))
 		{
 			$this->password = $this->hash($this->password);
 		}
 
-		return parent::update($criteria, $options);
+		return parent::update($criteria, $safe);
 	}
 
 	public function hash($password)

@@ -1,16 +1,10 @@
-kohana-3.3-mysqli
-=================
+MySQLi Database driver for Kohana
+=============================
 
-Kohana 3.3 MySQLi driver
+Installation
+------------
 
-A simple substitution for the original MySQL driver. Just add as a module and set database driver to 'MySQLi'. 
-Supports same functionality as the original driver. 
-
-http://tomlankhorst.nl/mysqli-database-driver-for-kohana-3-3/
-
-**Composer**
-```
-"require": {
-    "tomlankhorst/kohana-3.3-mysqli": "dev-master",
-}
-```
+* Download the module
+* Unzip it to the ``modules`` folder in Kohana
+* Add ``kohana-database-mysqli-driver`` as a module to ``application/bootstrap.php``
+* In database configuration file set ``'type' => 'MySQLi'``
