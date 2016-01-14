@@ -1,0 +1,110 @@
+header{
+    border-bottom: 3px solid $gray2;  
+    display: inline-block;
+    height: auto;
+    padding: 9px 0;
+    width: 100%;
+    .content{
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 9px 24px;
+        width: 100%;
+        img{
+            float: left;
+            margin-top: 8px;
+            width: 70px;
+            transition: all .3s;
+              @media (min-width: 420px) {
+                margin: 0;
+                width: 150px;
+              }
+        }
+        > button{
+            background: $gray3;
+            border: 0;
+            border-radius: 20px;
+            color: white;
+            float: right;
+            font-size: 17px;
+            font-weight: 300;
+            padding: 7px 20px;
+            &:hover{
+                background: $gray2;
+            }
+        }
+    }
+}//headerEnd * *
+
+.nav{
+    background: $gray1;
+    border-bottom: 1px solid $gray2;
+    margin-top: -7px;
+    height: 90px;
+    width: 100%;
+    .contentNav{
+        margin: 0 auto;
+        max-width: 1180px;
+        padding: 24px 24px 0;
+        text-align: center;
+        width: 100%;
+        @media (min-width: 768px) {
+           text-align: left;
+        }
+        button{
+            background: transparent;
+            border:0;
+            color: $gray3; 
+            font-size: 15px;
+            font-weight: bold;
+            padding: 0px 10px;
+            transition: color .2s;
+            &:hover{
+                color: $redNormal;
+            }
+            span{
+                opacity: .5;
+                font-size: 24px;
+                vertical-align: middle;
+                margin: 0 9px;
+                border: none;
+            }
+           @media (min-width: 768px) {
+              padding: 0px 40px;
+           } 
+        }
+        button:nth-child(1){
+         border-left: 2px solid $gray2;
+         border-right: 2px solid $gray2;   
+        }
+        button:nth-child(2){
+         border-right: 2px solid $gray2;    
+        }
+    }    
+}// SeccionNavEnd * *
+
+footer{
+     background: $gray3;
+     border-top: 3px solid $color6; 
+     bottom: 0px;
+     height: 70px;
+     position: fixed;
+     width: 100%;
+    ul{
+        margin: 0 auto !important;
+        max-width: 1180px;
+        padding:24px 18px;
+        width: 100%;
+        li{
+            color: white;
+            font-weight: 100;
+            text-align: center;
+            a{
+                color: white;
+                font-weight: 300;
+                &:hover{
+                    color: $redNormal;
+                }
+            }
+        }
+    }
+} //footerEnd * *

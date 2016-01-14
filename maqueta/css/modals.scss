@@ -1,0 +1,371 @@
+.modal-content{
+  .modal-header{
+        border-bottom: 3px solid $gray2;
+        background: $gray1;
+        position: relative;
+    button{
+        background: transparent; 
+        border: 0;
+        color: $redNormal;
+        transition: color .2s;
+        position: absolute;
+        top: 18px; right:18px;
+            &:hover{
+                color: $redLight;
+            }
+        span{
+            font-size: 20px;
+        }
+    }
+    h4{
+        color: $color3;
+        font-size: 28px;
+        font-weight: lighter;
+        margin: 0;
+        padding: 0;
+     }
+   }//  modal header ends 
+   .modal-body{
+    margin: 0;
+    padding: 24px;
+    article:nth-child(1){
+        position: relative;
+      a{
+        color: $gray3;
+        font-size: 30px;
+        position: absolute;
+        right: 18px;
+        top: 0;
+        z-index: 12;
+
+        &:hover{
+            color: $redLight;
+        }
+      }
+      a.upload{
+        color: $redNormal;
+        font-size: 40px;
+        z-index: 13;
+        @include centerAbsolute ;
+        width: 40px;
+        height: 60px;
+      }
+      figure{
+        border-radius: 50%;
+        height: 100px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100px;
+        img{
+            -webkit-transform: translate(-50%, -50%); /* Safari */
+            transform: translate(-50%, -50%);
+             -ms-transform: translate(-50%, -50%); /* IE 9 */
+            height: 100%;
+            left:50%;
+            position:absolute;
+            top:50%;
+            width: 100%;
+        }
+      }
+     }
+      article:nth-child(2){
+        color: $grayB;
+        font-size: 16px;
+        padding: 9px 0;
+        label, input{
+          display: block;
+          margin-bottom: 9px;
+          width: 100%;
+        }
+        input{
+            background-size: 26px;
+            background: url(../assets/images/png/edit45.png) no-repeat scroll right center / 26px auto;
+            border-radius: 3px;
+            border: 1px solid $color6;
+            font-weight: lighter;
+            padding: 9px ;
+        }
+     }
+     .contentProfile{
+        margin: 0;
+        padding: 0; 
+        font-size: 16px;
+         label{
+            color: $grayB;
+            font-weight: bold;
+            margin: 18px 0  4px;
+            padding: 0;
+            width: 100%;
+         }
+         :nth-child(3),  :nth-child(5), :nth-child(11),  :nth-child(13)
+         { margin-right: 8px;}
+         :nth-child(4),  :nth-child(6),:nth-child(12),  :nth-child(14)
+         { margin-left: 9px;}
+
+         :nth-child(3),  :nth-child(4),  :nth-child(5),
+         :nth-child(6),:nth-child(11),  :nth-child(12),
+         :nth-child(13),:nth-child(14)
+          {
+            width: 48%;
+          }
+         textarea, input{
+            background-size: 26px;
+            width: 100%;
+            background: url(../assets/images/png/edit45.png) no-repeat scroll right center / 26px auto;
+            border-radius: 3px;
+            border: 1px solid $color6;
+            font-weight: lighter;
+            padding: 9px ;
+
+
+         }
+        :nth-child(13),:nth-child(14){
+              -moz-appearance:    none;
+               -webkit-appearance: none;
+               appearance:         none;
+        }
+        :nth-child(14){
+           padding: 9px ;
+           background: url(../assets/images/png/arrows.png) no-repeat right ;
+           -webkit-appearance: none;
+           appearance:         none;
+           background-size: 22px;
+           border: 1px solid $color6;
+           color: $color4;
+          -moz-appearance:    none;
+        }
+         textarea{
+            height: 90px;
+         }
+        :nth-child(7), :nth-child(9){
+            display: inline-block;
+            float: left;
+            width: 30%;
+            padding: 9px 0 ;
+         }
+         :nth-child(8), :nth-child(10){
+            background: $color5;
+            border: 0;
+            color: black;
+            display: inline-block;
+            float: left;
+            font-weight: bold;
+            margin: 18px 0 4px;
+            text-align: center;
+            width: 70%;
+         }
+     }
+
+   } //modal body ends
+   .modal-footer{
+    text-align: center;
+    border: none;
+    padding: 18px 0 36px;
+       button{
+            background: $redNormal;
+            border-radius: 20px;
+            border: 0;
+            color: white;
+            font-size: 17px;
+            font-weight: 300;   
+            padding: 9px 23px;
+            &:hover{
+                background: $redLight;
+            }
+
+        }
+        :nth-child(1){
+            background: $blue;
+        }
+    }//ModalFooter
+} // modal ends -------------->
+
+
+.modalLarge{
+    padding: 18px 36px 36px;
+    background: $color7;
+    .headerModalLarge{
+        position: relative;
+        button.close{
+            position: absolute;
+            background: transparent;
+            border: 0;
+            color: $color2; 
+            right: -15px;
+            transition: color .2s;
+            top: -15px;
+            z-index: 2;
+                &:hover{
+                    color: $color4;
+                }
+            span{
+                font-size: 30px;
+            }
+      }
+      h6{
+        color: $color5;
+        font-size: 13px;
+        font-weight: bold;
+        padding:0 0 0 18px;
+        margin: 0;
+      }
+      h5{
+        color: $color2;
+        font-size: 28px;
+        font-weight: bold;
+        padding:0 0 0 18px;
+        margin: 0 0 18px 0;
+      }
+    }
+    .details{
+        background: white;
+        padding: 12px 4px;
+    
+        p{
+            font-weight: bold;
+            margin: 0;
+            span{
+                font-weight: lighter;
+            }
+        }
+        p:nth-child(3){
+            text-align: right;
+        }
+    }
+    .contentDetails{
+        padding: 24px 18px 36px;
+        h6{
+            font-size: 14px;
+            font-weight: bold;
+            padding: 9px 0;
+            margin: 0;
+            }
+            p{
+                color: $color3;
+                font-size: 13px;
+                font-weight: normal;
+                padding: 4px 0 18px;
+                margin: 0;
+            }
+            p.winner{
+                font-weight: bold;
+                padding: 2px 0;
+                span{
+                    font-weight: lighter;
+                }
+            }
+        
+    }
+
+    .jurado{
+        font-size: 13px;
+        padding: 0 18px 54px;
+        h4{
+            font-size: 14px;
+            font-weight: bold;
+            padding: 9px 0 24px;
+            margin: 0;      }
+        article{
+            img{
+                float: left;
+                width: 33%;
+            }
+            .text{
+                h4{
+                    padding: 0;
+                    margin: 0;
+                }
+                float: left;
+                padding: 0 18px;
+                width: 66%;
+                p{
+                    font-size: 11px;
+                   font-weight: lighter;
+                   margin: 0;
+                }
+                a{
+                    color: $color4;
+                }
+            }
+        }
+    }
+    .buttons{
+        text-align: center;
+        button.bt{
+            border: 0;
+            width: 200px;
+            border-radius: 5px;
+            font-size: 16px;    
+            font-weight: bold;
+            margin: 0 4px;
+            padding: 12px 20px; 
+            position:relative;
+            span{
+                font-size: 30px;
+                font-weight: lighter;
+                position:absolute;
+                right: 10px;
+                top: 2px;
+            }
+         }
+        button.bt:nth-child(1){
+            background: $color6;
+
+            &:hover{
+            background: $color4;
+            }
+        }
+        button.bt:nth-child(2){
+            background: $color6;
+            &:hover{
+            background: $color4;
+            }
+          }
+     }     
+
+}
+
+.modalSmall{
+    padding: 0 0 20px;
+    text-align: center;
+    .headModalSmall{
+         height: 46px;
+         padding: 12px;
+        background: $gray1;
+        border-bottom: 3px solid $gray2;
+        span{
+            color: $redNormal;
+            float: right;
+            transition: color .4s;
+            &:hover{
+                color: $redLight;
+            }
+        }
+    }
+    p{
+        font-size:15px;
+        font-weight: 100;
+
+      }
+    button{
+        border-radius: 50%;
+        border: 0;
+        color: white;
+        height: 40px;
+        padding: 7px 10px;      
+        width: 40px;
+     }
+    button:nth-child(3){
+        background: $redNormal;
+        &:hover{
+        background: $gray2;
+        }
+    }
+    button:nth-child(4){
+        background: $grayB;
+        &:hover{
+        background: $gray2;
+        }
+      }
+} //Modal Samll ends

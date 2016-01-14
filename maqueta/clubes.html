@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canon</title>
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+</head>
+<body>
+<header>
+	<div class="content">
+	  <a href="index.html">
+		<img src="assets/images/Canon-Logo-Black.png" alt="">
+	 </a>	
+		<button>Cerrar sesión</button>
+	</div>
+</header>
+<section class="nav">
+  <div class="contentNav">
+	<button><span class="flaticon-users82"></span>Clubes</button>
+	<button><span class="flaticon-setup6"></span>Concursos</button>
+	</div>
+</section>
+
+<section class="head">
+  <div class="contentHead">
+	<h2>Clubes</h2>
+	<button data-toggle="modal" data-target="#myModal2"> <span class="flaticon-users82"></span>Inscribir Club</button>  
+	<input type="text" placeholder="Buscar">
+	<select name="orden" id="orden">
+	    <option value="Ordenar">Ordenar por:</option>
+		<option value="ano">Año</option>
+		<option value="concurso">Concurso</option>
+		<option value="escuela">escuela</option>
+	</select>
+  </div>	
+</section>
+
+<main>
+	<table class="cubles">
+		<tr class="row">
+			 <td class="col-xs-2">Nombre del Club</td>
+			 <td class="col-xs-2">Localidad</td>
+			 <td class="col-xs-2">Miembros Registrados</td>
+			 <td class="col-xs-2">Concursos Activos</td>
+			 <td class="col-xs-2">Concuros por Aprobar</td>
+			 <td class="col-xs-1">Editar</td>
+			 <td class="col-xs-1">Eliminar</td>
+		</tr>
+		<tr class="row">
+			<td class="col-xs-2">Cuarto Obscuro</td>
+			<td class="col-xs-2">Guadalajara</td>
+			<td class="col-xs-2">30</td>
+			<td class="col-xs-2">2</td>
+			<td class="col-xs-2">0</td>
+			<td class="col-xs-1"><span class="flaticon-pencil86" data-toggle="modal" data-target="#myModal"></span></td>
+			<td class="col-xs-1"><span class="flaticon-close7" data-toggle="modal" data-target=".bs-example-modal-sm"></span></td>
+		</tr>
+		<tr class="row">
+			<td class="col-xs-2">Cuarto Obscuro</td>
+			<td class="col-xs-2">Guadalajara</td>
+			<td class="col-xs-2">30</td>
+			<td class="col-xs-2">2</td>
+			<td class="col-xs-2">0</td>
+			<td class="col-xs-1"><span class="flaticon-pencil86" data-toggle="modal" data-target="#myModal"></span></td>
+			<td class="col-xs-1"><span class="flaticon-close7" data-toggle="modal" data-target=".bs-example-modal-sm"></span></td>
+		</tr>
+  </table>
+  <ul class="pagination">
+	  <li><a href="#">1</a></li>
+	  <li><a href="#">2</a></li>
+	  <li><a href="#">3</a></li>
+	  <li><a href="#">4</a></li>
+	  <li><a href="#">5</a></li>
+</ul>
+</main>
+<footer>
+	<ul class="row">
+		<li class=" col-md-2"><a href="#">canon.com.mx</li></a>
+		<li class=" col-md-1"><a href="#">Acerca de</li></a>
+		<li class=" col-md-3"><a href="#">Aviso de Privacidad</li></a>
+		<li class=" col-md-1"><a href="#">Contacto</li></a>
+		<li class=" col-md-5">Copyright 2015 Mexicana. Todos los derechos reservados</li>
+	</ul>
+</footer>
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Editar Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+        <a class="flaticon-pencil86" href="#"></a>
+        <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-9"> 
+        	<label for="nameClub">Nombre del Club <sup>*</sup></label>
+        	<input required type="text" placeholder="Nombre del Club">
+        </article>
+        <div class="contentProfile col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
+	        <textarea name="textOne" id="textOne" rows="10"></textarea>
+
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto <sup>*</sup></label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto<sup>*</sup></label>
+	        <input required type="text" name="textTwo" class="col-xs-6" placeholder="Nombre">
+	        <input required type="email" name="textThree"  class="col-xs-6"placeholder="Email">
+
+	        <label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="•••••••">
+	        <label for="textFour" class="col-xs-12">Nueva Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Nueva Contraseña">
+
+
+	        <label for="textFour" class="col-xs-12">Teléfono <sup>*</sup></label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica  <sup>*</sup></label>  
+	        <input required type="telephone" name="textFive"  placeholder="Télefono">
+	       <select name="estado" id="estado">
+	       	   <option value="1" disiable> Estado de la República</option>
+	       </select>
+
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Incribir Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+         <a class="flaticon-arrow68 upload" href="#"></a>
+        <figure>
+        	<img src="assets/images/generic.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-9"> 
+        	<label for="nameClub">Nombre del Club <sup>*</sup></label>
+        	<input required type="text" placeholder="Nombre del Club">
+        </article>
+        <div class="contentProfile col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
+	        <textarea name="textOne" id="textOne" rows="10" placeholder="Ingresa breve descripción sobre el Club"></textarea>
+
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto <sup>*</sup></label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto<sup>*</sup></label>
+	        <input required type="text" name="textTwo" class="col-xs-6" placeholder="Nombre">
+	        <input required type="email" name="textThree"  class="col-xs-6"placeholder="Email">
+
+	        <label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="•••••••">
+	        <label for="textFour" class="col-xs-12">Nueva Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Nueva Contraseña">
+
+
+	        <label for="textFour" class="col-xs-12">Teléfono <sup>*</sup></label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica  <sup>*</sup></label>  
+	        <input required type="telephone" name="textFive"  placeholder="Télefono">
+	       <select name="estado" id="estado">
+	       	   <option value="1" disiable> Estado de la República</option>
+	       </select>
+
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Crear Club</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Small modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content remove modalSmall">
+      <div class="headModalSmall">
+      	<span class="flaticon-forbidden15" data-dismiss="modal"></span>
+      </div>
+      <p>¿Esta seguro de eleminar el club?</p>
+      <button  data-dismiss="modal" >SI</button>
+      <button  data-dismiss="modal" >NO</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -138,10 +138,10 @@ Kohana::modules(array(
  */
 Route::set('admin', '<directory>(/<controller>(/<action>(/<id>)))',
 		array(
-				'directory' => 'errors|admin',
+				'directory' => 'errors|administrator',
 		))
 		->defaults(array(
-				'controller' => 'login',
+				'controller' => 'index',
 				'action'     => 'index',
 		));
 		

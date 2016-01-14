@@ -1,0 +1,134 @@
+.head{
+    border-bottom: 1px solid $gray2;
+    height: 76px;
+    width: 100%;
+    .contentHead{
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+        h2{
+            font-family: 'Avenir LT Std';
+            color: $color3;
+            font-size: 28px;
+            font-weight: lighter;
+            display: inline-block;
+            padding-left: 9px; margin: 18px 0 0;
+        }
+        select, input, button{
+            float: right;
+            margin-top: 18px;
+        }
+        select, input{
+            padding: 8px 15px;
+            margin: 18px 18px 0 0;
+            width: 224px;
+            border-radius: 5px;
+        }
+        select{
+            background: url(../assets/images/png/arrows.png) no-repeat right ;
+         -moz-appearance:    none;
+           -webkit-appearance: none;
+           appearance:         none;
+           background-size: 22px;
+           border: 1px solid $color6;
+           color: $color4;
+                }
+        input{
+            background: url(../assets/images/png/magnifying-glass32.png) no-repeat right ;
+            border: 1px solid $color6;
+            background-size: 26px;
+        }
+        button{
+            background: $redNormal;
+            border-radius: 20px;
+            border: 0;
+            color: white;
+            float: right;
+            font-size: 17px;
+            font-weight: 300;   
+            margin-top: 15px;
+            padding: 5px 23px;
+            &:hover{
+                background: $redLight;
+            }
+            span{
+                font-size: 22px;
+                margin-right: 3px;
+                vertical-align: middle;
+            }
+        }
+   } 
+}// Seccion Head Ends
+main{
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 9px 18px; 
+    table{
+        font-size: 15px;
+        font-weight: lighter;
+        margin-top: 19px;
+        width: 100%;
+        tr:nth-child(1){
+            background: $gray4 ;
+            color: white;
+            height: 50px;
+
+            td{
+                background: $gray4 !important;
+            }
+            td{
+                font-weight: lighter !important;
+            }
+        }
+        tr{
+            height: 90px;
+            border-bottom: 1px solid $gray2;
+            td:nth-child(1){
+                font-weight: bold;
+                background: #F2F2F2;
+            }
+
+
+
+            :nth-child(4),:nth-child(5){
+                 font-weight: bold;
+            } 
+
+             :nth-child(6){
+                span{
+                  color: $blue;
+              }
+            } 
+            :nth-child(7){
+                span{
+                  color: $redLight;
+              }
+            }
+            td{
+                text-align: center;
+                span{
+                    
+                    cursor: pointer;
+                    font-size: 36px !important;
+                    transition: color .2s;
+                    &:hover{
+                        color: $color5;
+                    }
+                }
+            }
+        }
+    }// table Ends
+
+   ul.pagination{
+    display: block; 
+    margin: 36px auto;
+    width: 166px;
+    a{
+        color: $color3
+    }
+   }// pagination ends
+}//Main  ends---------------------->
+
+

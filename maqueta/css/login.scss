@@ -1,0 +1,81 @@
+// Star * *
+.headLogin{
+	border-bottom: 3px solid $gray2;  
+    display: inline-block;
+    height: auto;
+    padding: 9px 0;
+    width: 100%;
+    background: $gray1;
+    	img{
+            display: block;
+            margin: 8px auto 0;
+            transition: all .3s;
+            width: 150px;
+        }
+   
+}
+.login{
+     height: 250px;
+     width: 100%;
+     margin-left: 18px;
+     margin-right: 18px;
+	@include centerAbsolute;
+	article{
+		height: 244px;
+		padding: 36px 45px;
+		width: 100%;
+		input{
+			border-radius: 5px;
+			border: 1px solid $gray2;
+			font-size: 12px;
+			height: 37px;
+			margin-bottom: 12px;
+			padding: 0 18px;
+			width: 100%;
+		}
+		label, a{
+			color: #555;
+			font-size: 12px;
+			font-weight: normal;
+			margin-bottom: 17px;
+		}
+		a{
+			text-decoration: underline;
+			&:hover{
+				color: $redLight;
+			}
+		}
+     .button{
+     	text-align: center;
+		button{
+			background: $color1;
+			border-radius: 20px;
+			border: 0;
+			color: white;
+			font-size: 12px;
+			font-weight: bold;
+			height: 22px;
+			height: 40px;
+			text-align: center;
+			width: 200px;	
+			&:hover{
+			    background: $color2;
+				color: $color4;
+			}
+		}
+	  }	
+	}
+	  @media (min-width: 540px) {
+	  		width: 500px;
+	  		height: 250px;
+	  		img{
+		       margin: 0 auto 18px;
+	  		}
+		  	article{
+		  		input{}
+		  		label, a{}
+		  		button{}
+		  	}
+        
+	  }
+}
