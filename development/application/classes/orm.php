@@ -27,4 +27,14 @@ class ORM extends Kohana_ORM {
 
 		return $this;
 	}
+
+	public function getById($primary_key)
+	{
+		return ORM::factory($this->table_name())->where($this->primary_key(),'=',$primary_key)->find();
+	}
+
+	public function getByAllStatus($status)
+	{
+		return ORM::factory($this->table_name())->where('status','=',$status)->find_all();
+	}
 }

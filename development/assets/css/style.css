@@ -5,6 +5,9 @@ body {
   font-family: "Avenir LT Std";
   padding: 0; }
 
+.clear {
+  clear: both; }
+
 .red {
   color: red !important; }
 
@@ -406,16 +409,20 @@ main {
         top: 50%;
         transform: translate(-50%, -50%);
         width: 100%; }
-  .modal-content .modal-body article:nth-child(2), .modal-content .modal-body article:nth-child(3) {
+  .modal-content .modal-body article:nth-child(2),
+  .modal-content .modal-body article:nth-child(3) {
     color: #6E6E6E;
     font-size: 16px;
     padding-bottom: 9px;
     padding-top: 9px; }
-    .modal-content .modal-body article:nth-child(2) label, .modal-content .modal-body article:nth-child(2) input, .modal-content .modal-body article:nth-child(3) label, .modal-content .modal-body article:nth-child(3) input {
+    .modal-content .modal-body article:nth-child(2) label, .modal-content .modal-body article:nth-child(2) input,
+    .modal-content .modal-body article:nth-child(3) label,
+    .modal-content .modal-body article:nth-child(3) input {
       display: block;
       margin-bottom: 9px;
       width: 100%; }
-    .modal-content .modal-body article:nth-child(2) input, .modal-content .modal-body article:nth-child(3) input {
+    .modal-content .modal-body article:nth-child(2) input,
+    .modal-content .modal-body article:nth-child(3) input {
       background-size: 26px;
       background: url(../images/png/edit45.png) no-repeat scroll right center/26px auto;
       border-radius: 3px;
@@ -436,13 +443,24 @@ main {
       margin: 18px 0  4px;
       padding: 0;
       width: 100%; }
-    .modal-content .modal-body .contentProfile :nth-child(3), .modal-content .modal-body .contentProfile :nth-child(5), .modal-content .modal-body .contentProfile :nth-child(11), .modal-content .modal-body .contentProfile :nth-child(13) {
+    .modal-content .modal-body .contentProfile label:nth-child(3),
+    .modal-content .modal-body .contentProfile input:nth-child(5),
+    .modal-content .modal-body .contentProfile label:nth-child(11),
+    .modal-content .modal-body .contentProfile input:nth-child(13) {
       margin-right: 8px; }
-    .modal-content .modal-body .contentProfile :nth-child(4), .modal-content .modal-body .contentProfile :nth-child(6), .modal-content .modal-body .contentProfile :nth-child(12), .modal-content .modal-body .contentProfile :nth-child(14) {
+    .modal-content .modal-body .contentProfile label:nth-child(4),
+    .modal-content .modal-body .contentProfile input:nth-child(6),
+    .modal-content .modal-body .contentProfile label:nth-child(12),
+    .modal-content .modal-body .contentProfile select:nth-child(14) {
       margin-left: 9px; }
-    .modal-content .modal-body .contentProfile :nth-child(3), .modal-content .modal-body .contentProfile :nth-child(4), .modal-content .modal-body .contentProfile :nth-child(5),
-    .modal-content .modal-body .contentProfile :nth-child(6), .modal-content .modal-body .contentProfile :nth-child(11), .modal-content .modal-body .contentProfile :nth-child(12),
-    .modal-content .modal-body .contentProfile :nth-child(13), .modal-content .modal-body .contentProfile :nth-child(14) {
+    .modal-content .modal-body .contentProfile label:nth-child(3),
+    .modal-content .modal-body .contentProfile label:nth-child(4),
+    .modal-content .modal-body .contentProfile input:nth-child(5),
+    .modal-content .modal-body .contentProfile input:nth-child(6),
+    .modal-content .modal-body .contentProfile label:nth-child(11),
+    .modal-content .modal-body .contentProfile label:nth-child(12),
+    .modal-content .modal-body .contentProfile input:nth-child(13),
+    .modal-content .modal-body .contentProfile select:nth-child(14) {
       width: 48%; }
     .modal-content .modal-body .contentProfile textarea, .modal-content .modal-body .contentProfile input {
       background-size: 26px;
@@ -452,11 +470,12 @@ main {
       border: 1px solid #e6e6e6;
       font-weight: lighter;
       padding: 9px; }
-    .modal-content .modal-body .contentProfile :nth-child(13), .modal-content .modal-body .contentProfile :nth-child(14) {
+    .modal-content .modal-body .contentProfile input:nth-child(13),
+    .modal-content .modal-body .contentProfile select:nth-child(14) {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    .modal-content .modal-body .contentProfile :nth-child(14) {
+    .modal-content .modal-body .contentProfile select:nth-child(14) {
       padding: 9px;
       background: url(../images/png/arrows.png) no-repeat right;
       -webkit-appearance: none;
@@ -467,12 +486,14 @@ main {
       -moz-appearance: none; }
     .modal-content .modal-body .contentProfile textarea {
       height: 90px; }
-    .modal-content .modal-body .contentProfile :nth-child(7), .modal-content .modal-body .contentProfile :nth-child(9) {
+    .modal-content .modal-body .contentProfile label:nth-child(7),
+    .modal-content .modal-body .contentProfile label:nth-child(9) {
       display: inline-block;
       float: left;
       width: 30%;
       padding: 9px 0; }
-    .modal-content .modal-body .contentProfile :nth-child(8), .modal-content .modal-body .contentProfile :nth-child(10) {
+    .modal-content .modal-body .contentProfile input:nth-child(8),
+    .modal-content .modal-body .contentProfile input:nth-child(10) {
       background: #c4c4c4;
       border: 0;
       color: black;
@@ -500,38 +521,67 @@ main {
     background: #2596DE; }
 
 .modalLarge {
-  padding: 18px 36px 36px;
-  background: #f9f9f9; }
+  padding: 0 15px 0; }
   .modalLarge .headerModalLarge {
-    position: relative; }
+    background: #FAFAFA;
+    position: relative;
+    border-bottom: 3px solid #CECECE;
+    padding: 24px 0 0; }
+    .modalLarge .headerModalLarge .clubDetails {
+      display: block;
+      height: 80px;
+      margin: 0 auto;
+      width: 190px; }
+      .modalLarge .headerModalLarge .clubDetails figure {
+        border-radius: 50%;
+        float: left;
+        height: 70px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 70px; }
+        .modalLarge .headerModalLarge .clubDetails figure img {
+          -ms-transform: translate(-50%, -50%);
+          /* IE 9 */
+          -webkit-transform: translate(-50%, -50%);
+          /* Safari */
+          height: 100%;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%; }
+      .modalLarge .headerModalLarge .clubDetails h6 {
+        color: #232323;
+        float: right;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0;
+        padding: 29px 0 0 18px;
+        width: 120px; }
     .modalLarge .headerModalLarge button.close {
       position: absolute;
       background: transparent;
       border: 0;
       color: #444;
-      right: -15px;
+      right: 9px;
       transition: color .2s;
-      top: -15px;
-      z-index: 2; }
+      top: 9px;
+      z-index: 2;
+      font-size: 32px; }
       .modalLarge .headerModalLarge button.close:hover {
         color: #999; }
-      .modalLarge .headerModalLarge button.close span {
-        font-size: 30px; }
-    .modalLarge .headerModalLarge h6 {
-      color: #c4c4c4;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 0 0 0 18px;
-      margin: 0; }
     .modalLarge .headerModalLarge h5 {
-      color: #444;
-      font-size: 28px;
-      font-weight: bold;
+      color: #232323;
+      font-size: 33px;
+      font-weight: 100;
+      text-align: center;
       padding: 0 0 0 18px;
       margin: 0 0 18px 0; }
   .modalLarge .details {
     background: white;
-    padding: 12px 4px; }
+    padding: 12px 24px;
+    border-bottom: 1px solid #414141; }
     .modalLarge .details p {
       font-weight: bold;
       margin: 0; }
@@ -540,30 +590,72 @@ main {
     .modalLarge .details p:nth-child(3) {
       text-align: right; }
   .modalLarge .contentDetails {
-    padding: 24px 18px 36px; }
+    padding: 18px 37px 0px; }
     .modalLarge .contentDetails h6 {
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
-      padding: 9px 0;
+      padding: 0 0 9px;
       margin: 0; }
     .modalLarge .contentDetails p {
       color: #414141;
       font-size: 13px;
-      font-weight: normal;
-      padding: 4px 0 18px;
+      font-weight: 100;
+      padding: 4px 0 9px;
       margin: 0; }
-    .modalLarge .contentDetails p.winner {
-      font-weight: bold;
-      padding: 2px 0; }
-      .modalLarge .contentDetails p.winner span {
-        font-weight: lighter; }
+    .modalLarge .contentDetails article.winner {
+      margin-bottom: 18px; }
+      .modalLarge .contentDetails article.winner span {
+        color: #f9ba15;
+        float: left;
+        font-size: 50px;
+        height: 50px;
+        position: relative;
+        width: 50px;
+        margin-top: -12px; }
+        .modalLarge .contentDetails article.winner span b {
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          color: white;
+          font-size: 22px;
+          height: 22px;
+          width: 22px;
+          text-align: center; }
+      .modalLarge .contentDetails article.winner .textWinner {
+        float: right;
+        margin-left: 4px; }
+        .modalLarge .contentDetails article.winner .textWinner h4 {
+          padding: 0;
+          margin: 0;
+          font-weight: bold;
+          font-size: 14px; }
+        .modalLarge .contentDetails article.winner .textWinner p {
+          font-weight: 100;
+          color: #414141;
+          font-size: 13px;
+          padding: 0;
+          width: 185px; }
+    .modalLarge .contentDetails button {
+      background: #E51919;
+      border-radius: 20px;
+      border: 0;
+      color: white;
+      font-size: 17px;
+      font-weight: 300;
+      margin: 0 0 36px;
+      padding: 5px 23px; }
+      .modalLarge .contentDetails button:hover {
+        background: #F2BCBC; }
   .modalLarge .jurado {
     font-size: 13px;
-    padding: 0 18px 54px; }
+    padding: 0 42px 54px; }
     .modalLarge .jurado h4 {
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
-      padding: 9px 0 24px;
+      padding: 0 0 9px;
       margin: 0; }
     .modalLarge .jurado article img {
       float: left;
@@ -574,38 +666,40 @@ main {
       width: 66%; }
       .modalLarge .jurado article .text h4 {
         padding: 0;
-        margin: 0; }
+        margin: 0;
+        font-size: 14px; }
       .modalLarge .jurado article .text p {
         font-size: 11px;
         font-weight: lighter;
-        margin: 0; }
+        margin: 0;
+        line-height: 13px; }
       .modalLarge .jurado article .text a {
-        color: #999; }
-  .modalLarge .buttons {
-    text-align: center; }
-    .modalLarge .buttons button.bt {
-      border: 0;
-      width: 200px;
-      border-radius: 5px;
-      font-size: 16px;
+        color: #2596DE;
+        opacity: 1; }
+        .modalLarge .jurado article .text a:hover {
+          opacity: .6; }
+
+.foot {
+  background: #FAFAFA;
+  padding: 18px 0;
+  height: 86px; }
+  .foot .contentFoot {
+    width: 400px;
+    height: 50px;
+    margin: 0 auto; }
+    .foot .contentFoot p {
+      font-size: 17px;
       font-weight: bold;
-      margin: 0 4px;
-      padding: 12px 20px;
-      position: relative; }
-      .modalLarge .buttons button.bt span {
-        font-size: 30px;
-        font-weight: lighter;
-        position: absolute;
-        right: 10px;
-        top: 2px; }
-    .modalLarge .buttons button.bt:nth-child(1) {
-      background: #e6e6e6; }
-      .modalLarge .buttons button.bt:nth-child(1):hover {
-        background: #999; }
-    .modalLarge .buttons button.bt:nth-child(2) {
-      background: #e6e6e6; }
-      .modalLarge .buttons button.bt:nth-child(2):hover {
-        background: #999; }
+      width: 70%;
+      float: left; }
+    .foot .contentFoot .buttons {
+      float: left;
+      width: 30%;
+      text-align: center; }
+      .foot .contentFoot .buttons span {
+        font-size: 32px;
+        cursor: pointer;
+        margin: 2px; }
 
 .modalSmall {
   padding: 0 0 20px;

@@ -4,43 +4,88 @@
 	</button>
 	<h4 class="modal-title" id="myModalLabel">Editar Club</h4>
 </div>
-<div class="modal-body profileClub row">
-	<article class="col-sm-3">
-		<a class="flaticon-pencil86" href="#">
-			<input type="file" name="upload">
-		</a>
-		<figure>
-			<img src="<?php echo URL::base(); ?>assets/images/logoGeneric.png" alt="">
-		</figure>
-	</article>
-	<article class="col-sm-5">
-		<label for="nameClub">Nombre del Club <sup>*</sup></label>
-		<input required type="text" placeholder="Nombre del Club">
-	</article>
-	<article class="col-sm-4">
-		<label for="nameClub">Matrícula del Club<sup>*</sup></label>
-		<input required type="text" placeholder="Matrícula">
-	</article>
-	<div class="contentProfile col-xs-12">
-		<label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
-		<textarea name="textOne" id="textOne" rows="10"></textarea>
-		<label for="textTwo" class="col-xs-6">Nombre de Contacto <sup>*</sup></label>
-		<label for="textThree" class="col-xs-6">E-mail de contacto<sup>*</sup></label>
-		<input required type="text" name="textTwo" class="col-xs-6" placeholder="Nombre">
-		<input required type="email" name="textThree"  class="col-xs-6"placeholder="Email">
-		<label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
-		<input required type="text" name="textFour"  placeholder="•••••••">
-		<label for="textFour" class="col-xs-12">Nueva Contraseña <sup>*</sup></label>
-		<input required type="text" name="textFour"  placeholder="Nueva Contraseña">
-		<label for="textFour" class="col-xs-12">Teléfono <sup>*</sup></label>
-		<label for="textFive" class="col-xs-12">Estado de la Republica  <sup>*</sup></label>
-		<input required type="telephone" name="textFive"  placeholder="Télefono">
-		<select name="estado" id="estado">
-			<option value="1" disiable> Estado de la República</option>
-		</select>
+<form action="<?php echo URL::base(); ?>administrator/clubs/edit/<?php echo $club->id_club; ?>" method="POST" id="edit_club" enctype="multipart/form-data">
+	<div class="modal-body profileClub row">
+		<article class="col-sm-3">
+			<a class="flaticon-pencil86" href="#">
+				<input type="file" name="logotipo" id="logotipo">
+			</a>
+			<figure>
+				<?php if('' == $club->logotipo): ?>
+				<img src="<?php echo URL::base(); ?>assets/images/logoGeneric.png" alt="">
+				<?php else: ?>
+				<img src="<?php echo URL::base(); ?>assets/images/clubs/<?php echo $club->logotipo; ?>" alt="">
+				<?php endif; ?>
+			</figure>
+		</article>
+		<article class="col-sm-5">
+			<label for="nameClub">Nombre del Club <sup>*</sup></label>
+			<input required type="text" placeholder="Nombre del Club" name="name" value="<?php echo $club->name; ?>">
+		</article>
+		<article class="col-sm-4">
+			<label for="nameClub">Matrícula del Club<sup>*</sup></label>
+			<input required type="text" placeholder="Matrícula" name="enrollment" value="<?php echo $club->enrollment; ?>">
+		</article>
+		<div class="contentProfile col-xs-12">
+			<label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
+			<textarea name="description" id="textOne" rows="10"><?php echo $club->description; ?></textarea>
+			<label for="textTwo" class="col-xs-6">Nombre de Contacto <sup>*</sup></label>
+			<label for="textThree" class="col-xs-6">E-mail de contacto<sup>*</sup></label>
+			<input required type="text" name="name_contact" class="col-xs-6" placeholder="Nombre" value="<?php echo $club->name_contact; ?>">
+			<input required type="email" name="email"  class="col-xs-6" placeholder="Email" value="<?php echo $club->email; ?>">
+			<label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
+			<input type="password" name="password"  placeholder="•••••••">
+			<label for="textFour" class="col-xs-12">Repetir Contraseña <sup>*</sup></label>
+			<input type="password" name="repit_password"  placeholder="Nueva Contraseña">
+			<label for="textFour" class="col-xs-12">Teléfono <sup>*</sup></label>
+			<label for="textFive" class="col-xs-12">Estado de la Republica  <sup>*</sup></label>
+			<input required type="telephone" name="phone"  placeholder="Télefono" value="<?php echo $club->phone; ?>">
+			<select required name="state" id="estado">
+				<option value=""> Estado de la República</option>
+				<?php foreach($states as $state): ?>
+				<option value="<?php echo $state->name; ?>" <?php echo ($club->state == $state->name)?'selected':''; ?>><?php echo $state->name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
 	</div>
-</div>
-<div class="modal-footer">
-	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-	<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
-</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" >Cancelar</button>
+		<button type="submit" class="btn btn-primary" >Guardar Cambios</button>
+	</div>
+</form>
+<script>
+	$(document).ready(function() {
+		$('form#edit_club').submit(function(event) {
+			event.preventDefault();
+
+			var password = $('#password').val();
+			var repit_password = $('#repit_password').val();
+			if(password != repit_password){
+				alert('Las contraseñas no coinciden');
+			}else{
+				var url  = $(this).attr('action');
+				var inputFileImage = document.getElementById("logotipo").files[0];
+				var formElement = document.getElementById("edit_club");
+
+				var data = new FormData(formElement);
+				data.append('logotipo',inputFileImage);
+				
+				$.ajax({
+				    url: url,
+				    data: data,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				    type: 'POST',
+				    success: function(data){
+				        var dataParse = JSON.parse(data);
+				        alert(dataParse.message,function(){
+				        	alert('asdsadsa');
+				        });
+				        
+				    }
+				});
+			}
+		});
+	});
+</script>

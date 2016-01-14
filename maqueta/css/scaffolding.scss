@@ -3,10 +3,27 @@ body{
     font-family: "Avenir LT Std";
     padding: 0;
 }
-.active{
-    background: black;
-    color: white;
+.clear{
+    clear:  both;
 }
+.red{
+    color: red !important;;
+}
+.blue{
+    color: green !important;;
+}
+.yellow{
+    color: orange !important;;
+}
+.red, .blue, .yellow{
+    &:hover{
+        color: $gray2 !important;
+    }
+}
+.active{
+    color: $redNormal !important;
+}
+
 * a{
 	color: $link ;
 	transition: color .2s;

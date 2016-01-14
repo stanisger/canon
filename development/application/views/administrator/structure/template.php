@@ -12,16 +12,27 @@
 		<?php echo $body; ?>
 		<?php echo $footer; ?>
 		
-		<!-- Small modal -->
-		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<!-- Modal 1 -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog " role="document">
+				<div class="modal-content modalclubesBody">
+					
+				</div>
+			</div>
+		</div>
+		<!-- Modal 2 -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog " role="document">
+				<div class="modal-content modalclubesBody">
+					
+				</div>
+			</div>
+		</div>
+		<!-- Modal  3 -->
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content remove modalSmall">
-					<div class="headModalSmall">
-						<span class="flaticon-forbidden15" data-dismiss="modal"></span>
-					</div>
-					<p>¿Esta seguro de eleminar el club?</p>
-					<button  data-dismiss="modal" >SI</button>
-					<button  data-dismiss="modal" >NO</button>
+					
 				</div>
 			</div>
 		</div>

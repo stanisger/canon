@@ -18,7 +18,7 @@
 </header>
 <section class="nav">
   <div class="contentNav">
-	<button><span class="flaticon-users82"></span>Clubes</button>
+	<button class="active"><span class="flaticon-users82"></span>Clubes</button>
 	<button><span class="flaticon-setup6"></span>Concursos</button>
 	</div>
 </section>
@@ -96,14 +96,20 @@
       </div>
       <div class="modal-body profileClub row">
         <article class="col-sm-3">
-        <a class="flaticon-pencil86" href="#"></a>
+        <a class="flaticon-pencil86" href="#">
+        	<input type="file" name="upload">
+        </a>
         <figure>
         	<img src="assets/images/logoGeneric.png" alt="">
         </figure>
         </article>
-        <article class="col-sm-9"> 
+        <article class="col-sm-5"> 
         	<label for="nameClub">Nombre del Club <sup>*</sup></label>
         	<input required type="text" placeholder="Nombre del Club">
+        </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club<sup>*</sup></label>
+        	<input required type="text" placeholder="Matrícula">
         </article>
         <div class="contentProfile col-xs-12">
 	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
@@ -148,15 +154,22 @@
       </div>
       <div class="modal-body profileClub row">
         <article class="col-sm-3">
-         <a class="flaticon-arrow68 upload" href="#"></a>
-        <figure>
-        	<img src="assets/images/generic.png" alt="">
-        </figure>
+	      <a class="flaticon-arrow68 upload" href="#">
+	        <input type="file" name="upload">
+	      </a>
+	       <figure>
+	        <img src="assets/images/generic.png" alt="">
+	       </figure>
         </article>
-        <article class="col-sm-9"> 
+        <article class="col-sm-5"> 
         	<label for="nameClub">Nombre del Club <sup>*</sup></label>
         	<input required type="text" placeholder="Nombre del Club">
         </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club<sup>*</sup></label>
+        	<input required type="text" placeholder="Matrícula">
+        </article>
+
         <div class="contentProfile col-xs-12">
 	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
 	        <textarea name="textOne" id="textOne" rows="10" placeholder="Ingresa breve descripción sobre el Club"></textarea>

@@ -41,15 +41,40 @@
         &:hover{
             color: $redLight;
         }
+        input {
+            cursor: pointer;
+            top: 0;
+            z-index: 12;
+            position: absolute;
+            display: block !important;
+            width: 57px !important;
+            height: 57px !important;
+            opacity: 0 !important;
+            overflow: hidden !important;
+         }
       }
+
+
       a.upload{
+        @include centerAbsolute ;
         color: $redNormal;
         font-size: 40px;
-        z-index: 13;
-        @include centerAbsolute ;
-        width: 40px;
         height: 60px;
-      }
+        overflow: hidden;
+        width: 41px;
+        z-index: 13;
+          input {
+            cursor: pointer;
+            display: block !important;
+            height: 57px !important;
+            opacity: 0 !important;
+            overflow: hidden !important;
+            position: absolute;
+            top: 0;
+            width: 57px !important;
+            z-index: 12;
+         }
+      } 
       figure{
         border-radius: 50%;
         height: 100px;
@@ -58,21 +83,22 @@
         position: relative;
         width: 100px;
         img{
-            -webkit-transform: translate(-50%, -50%); /* Safari */
-            transform: translate(-50%, -50%);
              -ms-transform: translate(-50%, -50%); /* IE 9 */
+            -webkit-transform: translate(-50%, -50%); /* Safari */
             height: 100%;
             left:50%;
             position:absolute;
             top:50%;
+            transform: translate(-50%, -50%);
             width: 100%;
         }
       }
      }
-      article:nth-child(2){
+      article:nth-child(2), article:nth-child(3){
         color: $grayB;
         font-size: 16px;
-        padding: 9px 0;
+        padding-bottom: 9px;
+        padding-top: 9px;
         label, input{
           display: block;
           margin-bottom: 9px;
@@ -87,6 +113,12 @@
             padding: 9px ;
         }
      }
+         article:nth-child(2){
+            padding-right: 4px;
+         }
+          article:nth-child(3){
+            padding-left: 4px;
+         }
      .contentProfile{
         margin: 0;
         padding: 0; 
@@ -181,46 +213,76 @@
     }//ModalFooter
 } // modal ends -------------->
 
-
 .modalLarge{
-    padding: 18px 36px 36px;
-    background: $color7;
+    padding: 0 15px 0; 
     .headerModalLarge{
+        background: $gray1;
         position: relative;
+        border-bottom: 3px solid $gray2;
+        padding: 24px 0 0;
+        .clubDetails{
+            display: block;
+            height: 80px;
+            margin: 0 auto;
+            width: 190px;
+            figure{
+                border-radius: 50%;
+                float: left;
+                height: 70px;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+                width: 70px;
+            img{
+                 -ms-transform: translate(-50%, -50%); /* IE 9 */
+                -webkit-transform: translate(-50%, -50%); /* Safari */
+                height: 100%;
+                left:50%;
+                position:absolute;
+                top:50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                }
+            }
+            h6{
+              color: $gray4;
+               float: right;
+               font-size: 13px;
+               font-weight: bold;
+               margin: 0;
+               padding: 29px 0 0 18px;
+               width: 120px;  
+           }            
+        }   
         button.close{
             position: absolute;
             background: transparent;
             border: 0;
             color: $color2; 
-            right: -15px;
+            right: 9px;
             transition: color .2s;
-            top: -15px;
+            top: 9px;
             z-index: 2;
+            font-size: 32px;
                 &:hover{
                     color: $color4;
                 }
-            span{
-                font-size: 30px;
-            }
-      }
-      h6{
-        color: $color5;
-        font-size: 13px;
-        font-weight: bold;
-        padding:0 0 0 18px;
-        margin: 0;
       }
       h5{
-        color: $color2;
-        font-size: 28px;
-        font-weight: bold;
+        color: $gray4;
+        font-size: 33px;
+        font-weight: 100;
+        text-align: center;
         padding:0 0 0 18px;
         margin: 0 0 18px 0;
       }
     }
+
+
     .details{
         background: white;
-        padding: 12px 4px;
+        padding: 12px 24px;
+        border-bottom: 1px solid $gray3;
     
         p{
             font-weight: bold;
@@ -234,38 +296,85 @@
         }
     }
     .contentDetails{
-        padding: 24px 18px 36px;
+        padding:18px 37px 0px;
         h6{
-            font-size: 14px;
+            font-size: 18px;
             font-weight: bold;
-            padding: 9px 0;
+            padding: 0 0 9px;
             margin: 0;
             }
             p{
                 color: $color3;
                 font-size: 13px;
-                font-weight: normal;
-                padding: 4px 0 18px;
+                font-weight: 100;
+                padding: 4px 0 9px;
                 margin: 0;
             }
-            p.winner{
-                font-weight: bold;
-                padding: 2px 0;
-                span{
-                    font-weight: lighter;
+            article.winner{
+                margin-bottom: 18px;
+               span{
+                color: #f9ba15;
+                float: left;
+                font-size: 50px;
+                height: 50px;
+                position: relative;
+                width: 50px;
+                margin-top: -12px;
+                b{
+                    @include centerAbsolute;
+                    color: white;
+                    font-size: 22px;
+                    height: 22px;
+                    width: 22px;
+                    text-align: center;
                 }
+
+               }
+               .textWinner{
+                float: right;
+                margin-left: 4px;
+                h4{
+                    padding:0;
+                    margin: 0;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+                p{
+                    font-weight: 100;
+                    color: $gray3;
+                    font-size:  13px;
+                    padding: 0;
+                    width: 185px;
+                }
+              }
+
             }
+            button{
+                background: $redNormal;
+                border-radius: 20px;
+                border: 0;
+                color: white;
+                font-size: 17px;
+                font-weight: 300;   
+                margin: 0 0 36px;
+                padding: 5px 23px;
+                &:hover{
+                    background: $redLight;
+                }
+
+        }
         
     }
 
     .jurado{
         font-size: 13px;
-        padding: 0 18px 54px;
+        padding: 0 42px 54px;
         h4{
-            font-size: 14px;
+            font-size: 18px;
             font-weight: bold;
-            padding: 9px 0 24px;
-            margin: 0;      }
+            padding: 0 0 9px;
+            margin: 0;     
+        }
         article{
             img{
                 float: left;
@@ -275,6 +384,7 @@
                 h4{
                     padding: 0;
                     margin: 0;
+                    font-size: 14px;
                 }
                 float: left;
                 padding: 0 18px;
@@ -283,48 +393,47 @@
                     font-size: 11px;
                    font-weight: lighter;
                    margin: 0;
+                   line-height: 13px;
                 }
                 a{
-                    color: $color4;
+                    color: $blue;
+                    opacity: 1;
+                    &:hover{
+                        opacity: .6;
+                    }
                 }
             }
         }
     }
-    .buttons{
-        text-align: center;
-        button.bt{
-            border: 0;
-            width: 200px;
-            border-radius: 5px;
-            font-size: 16px;    
-            font-weight: bold;
-            margin: 0 4px;
-            padding: 12px 20px; 
-            position:relative;
-            span{
-                font-size: 30px;
-                font-weight: lighter;
-                position:absolute;
-                right: 10px;
-                top: 2px;
-            }
-         }
-        button.bt:nth-child(1){
-            background: $color6;
+}
 
-            &:hover{
-            background: $color4;
+   .foot {
+    background: $gray1;
+    padding: 18px 0;
+    height: 86px;
+    .contentFoot{
+        width: 400px;
+        height: 50px;
+        margin: 0 auto;
+        p{
+            font-size: 17px;
+            font-weight: bold;
+            width: 70%;
+            float: left;
+        }
+        .buttons{
+            float: left;
+            width: 30%;
+            text-align: center;
+            span{
+                font-size: 32px;
+                cursor: pointer;
+                margin: 2px;
             }
         }
-        button.bt:nth-child(2){
-            background: $color6;
-            &:hover{
-            background: $color4;
-            }
-          }
-     }     
-
-}
+    }
+ 
+   }     
 
 .modalSmall{
     padding: 0 0 20px;

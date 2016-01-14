@@ -10,12 +10,25 @@ class Model_Clubs extends ORM {
 				->where($this->primary_key(),'=',$primary_key)
 				->find()
 				->set(array(
-					'name'	=> $post['name'],
+					'enrollment'	=> $post['enrollment'],
+					'name'			=> $post['name'],
+					'description'	=> $post['description'],
+					'name_contact'	=> $post['name_contact'],
+					'email'			=> $post['email'],
+					'password'		=> $post['password'],
+					'phone'			=> $post['phone'],
+					'state'			=> $post['state'],
+					'status'		=> 'Activo',
 				))->save();
 	}
 
-	public function saveImage($primary_key,$image)
+	public function saveImage($primary_key,$logotipo)
 	{
-		
+		return ORM::factory($this->table_name())
+				->where($this->primary_key(),'=',$primary_key)
+				->find()
+				->set(array(
+					'logotipo'		=> $logotipo,
+				))->save();
 	}
 }
