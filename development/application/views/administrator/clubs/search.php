@@ -1,18 +1,3 @@
-<section class="head">
-	<div class="contentHead">
-		<h2>Clubes</h2>
-		<button id="add_club" href="<?php echo URL::base();?>administrator/clubs/add"> <span class="flaticon-users82"></span>Inscribir Club</button>
-		<input type="text" id="keyword" placeholder="Buscar" onkeyup="searchClubs();">
-		<select name="orden" id="ordenClubs" onchange="searchClubs();">
-			<option value="">Ordenar por:</option>
-			<option value="name">Nombre</option>
-			<option value="state">Localidad</option>
-			<option value="escuela">Concursos Activo</option>
-			<option value="escuela">Concursos por aprobar</option>
-		</select>
-	</div>
-</section>
-<main>
 <table class="cubles">
 	<tr class="row">
 		<td class="col-xs-2">Nombre del Club</td>
@@ -36,4 +21,3 @@
 	<?php endforeach; ?>
 </table>
 <?php echo $pagination; ?>
-</main>

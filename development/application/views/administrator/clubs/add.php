@@ -1,5 +1,6 @@
 <div class="modal-header">
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<button style="display:none" type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<button type="button" onclick="closeModal();" aria-label="Close">
 	<span aria-hidden="true" class="flaticon-forbidden15"></span>
 	</button>
 	<h4 class="modal-title" id="myModalLabel">Inscribir Club</h4>
@@ -36,7 +37,7 @@
 			<label for="textFour" class="col-xs-12">Teléfono <sup>*</sup></label>
 			<label for="textFour" class="col-xs-12">Estado de la Republica  <sup>*</sup></label>
 			<input   type="telephone" name="phone"  placeholder="Télefono">
-			<select  required name="state" id="estado">
+			<select  required name="state" id="state">
 				<option value=""> Estado de la República</option>
 				<?php foreach($states as $state): ?>
 					<option value="<?php echo $state->name; ?>" ><?php echo $state->name; ?></option>
@@ -49,36 +50,3 @@
 		<button type="submit" class="btn btn-primary" >Crear Club</button>
 	</div>
 </form>
-<script>
-	$(document).ready(function() {
-		$('form#add_club').submit(function(event) {
-			event.preventDefault();
-
-			var password = $('#password').val();
-			var repit_password = $('#repit_password').val();
-			if(password != repit_password){
-				alert('Las contraseñas no coinciden');
-			}else{
-				var url  = $(this).attr('action');
-				var inputFileImage = document.getElementById("logotipo").files[0];
-				var formElement = document.getElementById("add_club");
-
-				var data = new FormData(formElement);
-				data.append('logotipo',inputFileImage);
-				
-				$.ajax({
-				    url: url,
-				    data: data,
-				    cache: false,
-				    contentType: false,
-				    processData: false,
-				    type: 'POST',
-				    success: function(data){
-				        alert(data.message);
-				        
-				    }
-				});
-			}
-		});
-	});
-</script>

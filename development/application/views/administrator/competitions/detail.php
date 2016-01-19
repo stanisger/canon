@@ -1,6 +1,6 @@
 <div class="headerModalLarge row">
 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	<span aria-hidden="true" class="flaticon-close7"></span>
+	<span aria-hidden="true" class="flaticon-forbidden15"></span>
 	</button>
 	<div class="clubDetails">
 		<figure>

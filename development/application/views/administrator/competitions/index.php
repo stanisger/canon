@@ -21,33 +21,41 @@
 		<td class="col-xm-4 col-sm-1">Participantes</td>
 		<td class="col-xm-4 col-sm-1">Estatus</td>
 	</tr>
-	
+<?php foreach($competitions as $competition): ?>	
 	<tr class="row">
-		<td class="col-sm-4 col-sm-2">Name</td>
+		<td class="col-sm-4 col-sm-2"><?php echo $competition->name;?></td>
+		<td class="col-sm-4 col-sm-2"><?php echo Helpers_Competitions::club($competition->fk_club); ?></td>
+		<td class="col-sm-4 col-sm-2"><?php echo $competition->category; ?></td>
 		<td class="col-sm-4 col-sm-2">
-			<b>Cuarto Oscuro</b>
-		Guadalajara</td>
-		<td class="col-sm-4 col-sm-2">Paisaje</td>
-		<td class="col-sm-4 col-sm-2">
-			10 de Enero <br>
-			al 25 de Enero
+			<?php echo Helpers_Dates::getMonth($competition->init_date); ?> <br>
+			<?php echo Helpers_Dates::getMonth($competition->finish_date); ?>
 		</td>
-		<td class="col-sm-4 col-sm-2"> 2 de Enero</td>
+		<td class="col-sm-4 col-sm-2"><?php echo Helpers_Dates::getMonth($competition->date); ?></td>
 		<td class="col-sm-4 col-sm-1">50</td>
 		<td class="col-sm-4 col-sm-1">
-			<span class="flaticon-chronometer yellow" href="<?php echo URL::base(); ?>administrator/competitions/detail/" data-toggle="modal" data-target=".bs-example-modal-lg"></span>
-			<span class="flaticon-check12 blue" data-toggle="modal" data-target=".bs-example-modal-lg"></span>
-			<span class="flaticon-close7 red" data-toggle="modal" data-target=".bs-example-modal-lg"></span>
+			<?php 
+				$classes = '';
+				switch ($competition->status) {
+					case 'Pendiente':
+							$classes = 'flaticon-chronometer yellow';
+						break;
+					case 'Activo':
+							$classes = 'flaticon-check12 blue';
+						break;
+					case 'Rechazado':
+							$classes = 'flaticon-close7 red';
+						break;
+					default:
+						# code...
+						break;
+				}
+			?>
+			<span class="<?php echo $classes; ?>" onclick="approve('<?php echo URL::base(); ?>administrator/competitions/detail/<?php echo $competition->id_competition; ?>');"></span>
 		</td>
 	</tr>
+<?php endforeach; ?>
 </table>
-<ul class="pagination">
-	<li><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-</ul>
+<?php echo $pagination; ?>
 </main>
 <!-- Large modal -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">

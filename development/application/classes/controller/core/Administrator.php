@@ -5,7 +5,7 @@ class Controller_Core_Administrator extends Controller_Core_System {
 	protected $a1;
 	protected $authention;
 	protected $userdata;
-
+	public $rows_by_page;
 	public function before()
 	{
 		parent::before();

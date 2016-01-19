@@ -101,6 +101,7 @@ if ( ! defined('KOHANA_START_MEMORY'))
 // Bootstrap the application
 require APPPATH.'bootstrap'.EXT;
 require_once(APPPATH.'classes/Helpers/image.php');
+require_once(APPPATH.'classes/Helpers/competitions.php');
 
 if (PHP_SAPI == 'cli') // Try and load minion
 {
