@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canon</title>
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+</head>
+<body>
+<header>
+	<div class="content">
+	  <a href="index.html">
+		<img src="assets/images/Canon-Logo-Black.png" alt="">
+	 </a>
+		<button>Cerrar sesión</button>
+      <a  href="#" data-toggle="modal" data-target="#myModal" class="edit">
+      	Nombre de Club
+      </a>	
+	 <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+      </figure>
+	</div>
+</header>
+<section class="nav">
+  <div class="contentNav">
+	<button class="active"><span class="flaticon-setup6"></span>Concursos</button>
+	<button><span class="flaticon-users82"></span>Miembros</button>
+	</div>
+</section> 
+
+<section class="head">
+  <div class="contentHead">
+	<h2>Concursos</h2> 
+	<button>Crear Concurso</button>
+	<input type="text" placeholder="Buscar">
+	<select name="orden" id="orden">
+	    <option value="Ordenar">Ordenar por:</option>
+		<option value="ano">Año</option>
+		<option value="concurso">Concurso</option>
+		<option value="escuela">escuela</option>
+	</select>
+  </div>	
+</section>
+<main>
+	<table class="cubles">
+		<tr class="row">
+			 <td>Título del concurso</td>
+			 <td>Categoría</td>
+			 <td>Vigencia del concurso</td>
+			 <td>Fecha de solicitud</td>
+			 <td>Estatus</td>
+			 <td>Galería</td>
+		</tr>
+		<tr class="row">
+			<td >Siente México</td>
+			<td>Paisaje</td>
+			<td>
+				10 de Enero <br>
+				al 25 de Enero
+			</td>
+			<td> 2 de Enero</td>
+			<td>
+				<span class="flaticon-check12 activeStatus" ></span>
+				<span class="flaticon-close7" ></span>
+				<span class="flaticon-chronometer" ></span>
+				<span class="flaticon-pencil86" ></span>
+			</td>
+			<td>
+				<a href="galería.html" class="flaticon-images11 activeStatus" ></a>
+				<a href="galería.html" class="flaticon-trophy36" ></a>
+			</td>
+		</tr>
+		 <tr class="row activeEnd">
+			<td >Sabores de México</td>
+			<td>Comida</td>
+			<td>
+				10 de Enero <br>
+				al 25 de Enero
+			</td>
+			<td> 2 de Enero</td>
+			<td>
+			  <p class="active">Finalizado</p>
+			</td>
+			<td>
+		       <!-- <p></p> -->
+		    </td>
+		</tr>
+  </table>
+  <ul class="pagination">
+	  <li><a href="#">1</a></li>
+	  <li><a href="#">2</a></li>
+	  <li><a href="#">3</a></li>
+	  <li><a href="#">4</a></li>
+	  <li><a href="#">5</a></li>
+</ul>
+</main>
+<footer>
+	<ul class="row">
+		<li class=" col-md-2"><a href="#">canon.com.mx</li></a>
+		<li class=" col-md-1"><a href="#">Acerca de</li></a>
+		<li class=" col-md-3"><a href="#">Aviso de Privacidad</li></a>
+		<li class=" col-md-1"><a href="#">Contacto</li></a>
+		<li class=" col-md-5">Copyright 2015 Mexicana. Todos los derechos reservados</li>
+	</ul>
+</footer>
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Perfil de Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+	       <!--  <a class="flaticon-pencil86" href="#">
+	        	<input type="file" name="upload">
+	        </a> -->
+        <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-5"> 
+        	<label for="nameClub">Nombre del Club</label>
+        	<p>Cuartto Oscuro</p>
+        </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club</label>
+        	<p>455453</p>
+        </article>
+        <div class="contentProfile col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción</label>
+	        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio autem consectetur sunt quisquam, accusantium totam provident rem doloremque voluptas possimus obcaecati veniam sit impedit nobis laborum illo rerum, unde nulla?</p>
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto</label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto</label>
+	        <p>Rául López</p>
+	        <p>raul@cuartoscuro.com</p>
+	        <label for="textFour" class="col-xs-12">Contraseña</label>
+	        <p> MMJBVCSGSFFS</p>
+	        <label for="textFour" class="col-xs-12">Teléfono</label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica</label>  
+	        <p>5454554545</p>
+	       	<p>Distrito Federal</p>
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"
+        data-toggle="modal" data-target="#myModal2"
+        >Editar Perfil</button>
+      </div>
+    </div>
+  </div> 
+</div>
+<!-- Modal 2 -->
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Editar Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+        <a class="flaticon-pencil86" href="#">
+        	<input type="file" name="upload">
+        </a>
+        <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-5"> 
+        	<label for="nameClub">Nombre del Club </label>
+        	<p>Cuarto Oscuro</p>
+        </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club</label>
+        	<p>NYGVDDT</p>
+        </article>
+        <div class="contentProfileEdit col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
+	        <textarea name="textOne" id="textOne" rows="10" placeholder="Ingresa breve descripción sobre el Club"></textarea>
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto</label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto</label>
+	        <p>Raúl López</p>
+	        <p>raul@gmail.com</p>
+	        <label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Ingresa contraseña">
+	        <label for="textFour" class="col-xs-12">Nueva Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Nueva Contraseña">
+
+
+	        <label for="textFour" class="col-xs-12">Teléfono</label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica</label>  
+	        <p>545454545</p>
+	        <p>Distito Federal</p>
+
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -138,7 +138,7 @@ Kohana::modules(array(
  */
 Route::set('administrator', '<directory>(/<controller>(/<action>(/<id>)))',
 		array(
-				'directory' => 'administrator',
+				'directory' => 'administrator|club',
 		))
 		->defaults(array(
 				'controller' => 'clubs',

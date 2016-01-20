@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canon</title>
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+     <!-- // galllery -->
+    <script src="assets/js/jquery.collagePlus.js"></script>
+    <script src="assets/js/jquery.removeWhitespace.js"></script>
+    <script src="assets/js/jquery.collageCaption.js"></script>
+    <script type="text/javascript">
+
+    // All images need to be loaded for this plugin to work so
+    // we end up waiting for the whole window to load in this example
+    $(window).load(function () {
+        $(document).ready(function(){
+            collage();
+            $('.Collage').collageCaption();
+        });
+    });
+
+
+    // Here we apply the actual CollagePlus plugin
+    function collage() {
+        $('.Collage').removeWhitespace().collagePlus(
+            {
+                'fadeSpeed'     : 2000,
+                'targetHeight'  : 400,
+                'effect'        : 'effect-3',
+                'direction'     : 'vertical'
+            }
+        );
+    };
+
+    // This is just for the case that the browser window is resized
+    var resizeTimer = null;
+    $(window).bind('resize', function() {
+        // hide all the images until we resize them
+        $('.Collage .Image_Wrapper').css("opacity", 0);
+        // set a timer to re-apply the plugin
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(collage, 200);
+    });
+
+    </script>
+</head>
+<body>
+<header>
+	<div class="content">
+	  <a href="index.html">
+		<img src="assets/images/Canon-Logo-Black.png" alt="">
+	 </a>
+		<button>Cerrar sesión</button>
+      <a  href="#" data-toggle="modal" data-target="#myModal" class="edit">
+      	Nombre de Club
+      </a>	
+	 <figure>
+        <img src="assets/images/logoGeneric.png" alt="">
+      </figure>
+	</div>
+</header>
+<section class="nav">
+  <div class="contentNav">
+	<button class="active"><span class="flaticon-setup6"></span>Concursos</button>
+	<button><span class="flaticon-users82"></span>Miembros</button>
+	</div>
+</section> 
+<section class="head">
+  <div class="contentHead">
+	<h2><strong>Nombre del concurso</strong> / Categoría</h2> 
+    <button class="btnWinners"> <span class="flaticon-trophy36 "></span>Publicar Ganadores</button>
+	<button class="dwGallery"> <span  class="flaticon-downloading"></span>Descagar de galería</button>
+  </div>	
+</section>
+<div class="mainGallery">
+	<section class="row">
+	    <div class="headWinners">
+	      <span class="flaticon-trophy36"></span>
+		   <h2>Selección de Ganadores</h2>
+		 </div>
+		<article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-trophy36 col-sm-3">
+				
+				</span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-trophy36 col-sm-3"></span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-trophy36 col-sm-3">
+				
+				</span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+              <div class="uploadWinner">
+              	<input type="text" placeholder="Folio de la Fotografía">
+              	<button>Confirmar</button>
+              </div>
+              <div class="text row">
+				<span class="flaticon-trophy36 col-sm-3">
+				
+				</span>
+				<div class="detailsWinners col-sm-9">
+				</div>
+			</div>
+		</article>
+	</section>
+	<section class="row">
+		 <div class="headWinners">
+	      <span class="flaticon-award52"></span>
+		   <h2>Selección de Meción Hórificas</h2>
+		 </div>
+		 <article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-award52 col-sm-3"></span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-award52 col-sm-3"></span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+			<figure>
+				<img src="assets/images/pic1.jpg" alt="">
+			</figure>
+			<div class="text row">
+				<span class="flaticon-award52 col-sm-3"></span>
+				<div class="detailsWinners col-sm-9">
+					<h4>Juna Luis Guerra</h4>
+					<p>Nombre de la fotografía</p>
+				</div>
+			</div>
+		</article>
+		<article class="col-sm-3">
+              <div class="uploadWinner">
+              	<input type="text" placeholder="Folio de la Fotografía">
+              	<button>Confirmar</button>
+              </div>
+              <div class="text row">
+				<span class="flaticon-award52 col-sm-3"></span>
+			</div>
+		</article>
+	</section>
+	<div class="galleryContent">
+	 <section class="Collage effect-parent">
+	       <div class="Image_Wrapper" data-caption="No. de folio: <strong>QETRSI42423</strong>">
+	         <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+	          <img src="https://sbphotospecial.files.wordpress.com/2013/03/world-press-photo-2013-water-buffalo_64501_600x4501.jpg">
+	         </a>
+	       </div>
+
+	        <div class="Image_Wrapper" data-caption="No. de folio: <strong>QETRSI42423</strong>">
+	         <a  href="#" data-toggle="modal" data-target=".bs-example-modal-lg2">
+	           <img src="http://www.exposureguide.com/images/photography-ebooks/trick-photography-abstract-face-ebook.jpg">
+	         </a>
+	        </div>
+
+
+	        <div class="Image_Wrapper" data-caption="No. de folio: <strong>QETRSI42423</strong>">
+	          <a>
+	            <img src="https://nyoobserver.files.wordpress.com/2015/12/10380751_1555369474725820_2515898643941177336_n.jpg?quality=80&w=635">
+	           </a>
+	         </div>
+	               
+
+	          <div class="Image_Wrapper" data-caption="No. de folio: <strong>QETRSI42423</strong>">
+	            <a>
+	              <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/873/cache/your-shot-rapids-bosnia-herzegovina_87316_600x450.jpg">
+	             </a>
+	          </div>
+
+
+	          <div class="Image_Wrapper" data-caption="No. de folio: <strong>QETRSI42423</strong>">
+	            <a>
+	              <img src="http://i.dailymail.co.uk/i/pix/2013/12/02/article-2516663-19C53EDE00000578-413_964x616.jpg">
+	            </a>
+	          </div>
+
+	       </section>
+	   
+		<button> <span class="flaticon-round69"></span>Mostrar más fotografías</button>
+	</div>
+</div>
+<footer>
+	<ul class="row">
+		<li class=" col-md-2"><a href="#">canon.com.mx</li></a>
+		<li class=" col-md-1"><a href="#">Acerca de</li></a>
+		<li class=" col-md-3"><a href="#">Aviso de Privacidad</li></a>
+		<li class=" col-md-1"><a href="#">Contacto</li></a>
+		<li class=" col-md-5">Copyright 2015 Mexicana. Todos los derechos reservados</li>
+	</ul>
+</footer>
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Perfil de Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+	       <!--  <a class="flaticon-pencil86" href="#">
+	        	<input type="file" name="upload">
+	        </a> -->
+        <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-5"> 
+        	<label for="nameClub">Nombre del Club</label>
+        	<p>Cuartto Oscuro</p>
+        </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club</label>
+        	<p>455453</p>
+        </article>
+        <div class="contentProfile col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción</label>
+	        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio autem consectetur sunt quisquam, accusantium totam provident rem doloremque voluptas possimus obcaecati veniam sit impedit nobis laborum illo rerum, unde nulla?</p>
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto</label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto</label>
+	        <p>Rául López</p>
+	        <p>raul@cuartoscuro.com</p>
+	        <label for="textFour" class="col-xs-12">Contraseña</label>
+	        <p> MMJBVCSGSFFS</p>
+	        <label for="textFour" class="col-xs-12">Teléfono</label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica</label>  
+	        <p>5454554545</p>
+	       	<p>Distrito Federal</p>
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"
+        data-toggle="modal" data-target="#myModal2"
+        >Editar Perfil</button>
+      </div>
+    </div>
+  </div> 
+</div>
+<!-- Modal 2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Editar Club</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+        <a class="flaticon-pencil86" href="#">
+        	<input type="file" name="upload">
+        </a>
+        <figure>
+        	<img src="assets/images/logoGeneric.png" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-5"> 
+        	<label for="nameClub">Nombre del Club </label>
+        	<p>Cuarto Oscuro</p>
+        </article>
+        <article class="col-sm-4"> 
+        	<label for="nameClub">Matrícula del Club</label>
+        	<p>NYGVDDT</p>
+        </article>
+        <div class="contentProfileEdit col-xs-12">
+	        <label for="textOne" class="col-xs-12">Descripción <sup>*</sup></label>
+	        <textarea name="textOne" id="textOne" rows="10" placeholder="Ingresa breve descripción sobre el Club"></textarea>
+	        <label for="textTwo" class="col-xs-6">Nombre de Contacto</label>
+	        <label for="textThree" class="col-xs-6">E-mail de contacto</label>
+	        <p>Raúl López</p>
+	        <p>raul@gmail.com</p>
+	        <label for="textFour" class="col-xs-12">Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Ingresa contraseña">
+	        <label for="textFour" class="col-xs-12">Nueva Contraseña <sup>*</sup></label>
+	        <input required type="text" name="textFour"  placeholder="Nueva Contraseña">
+
+
+	        <label for="textFour" class="col-xs-12">Teléfono</label>
+	        <label for="textFive" class="col-xs-12">Estado de la Republica</label>  
+	        <p>545454545</p>
+	        <p>Distito Federal</p>
+
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Large modal -->
+
+
+<!-- Large modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content row descriptionPhoto">
+    <button data-dismiss="modal"><span class="flaticon-close7"></span></button>
+        <figure  class="col-sm-8">
+        	<img class="horizontal"src="https://sbphotospecial.files.wordpress.com/2013/03/world-press-photo-2013-water-buffalo_64501_600x4501.jpg" alt="#">
+        </figure>
+        <div class="detailsPhoto col-sm-4">
+	        <div class="headDetailsPhoto">
+	        	<figure>
+	        		<img src="assets/images/photografer.png" alt="">
+	        	</figure>
+	        	<div class="text">
+	        		<h2>Javier Hernandez Mancera</h2>
+	        		<a href="#">mancera@gmail.com</a>
+	        		<p>Ciudad de México <br>
+	        		   <strong>445 43 22 63</strong>
+	        		</p>
+	        	</div>
+	          </div> 
+	        	<hr class="clear">
+	          <div class="contentDetailsPhoto">
+	          	<article>
+	          		<p>Nombre de la fotografía</p>
+	          		<h4>Toros y toreros y toritos</h4>
+	          	</article>
+	            <hr class="clear">
+	          	<article>
+	          		<p>Ficha Técnica</p>
+	          		<table>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          		</table>
+	          	</article>
+	          	<article>
+	          		<p>Folio de la fotofrafía</p>
+	          		<span>HYDCSDRDESX</span>
+	          	</article>
+	          </div>		
+        </div>
+
+     </div>
+  </div>
+</div>
+
+<!-- Large modal -->
+<div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content row descriptionPhoto">
+    <button data-dismiss="modal"><span class="flaticon-close7"></span></button>
+        <figure  class="col-sm-8">
+        	<img class="vertical"src="http://www.exposureguide.com/images/photography-ebooks/trick-photography-abstract-face-ebook.jpg" alt="#">
+        </figure>
+        <div class="detailsPhoto col-sm-4">
+	        <div class="headDetailsPhoto">
+	        	<figure>
+	        		<img src="assets/images/photografer.png" alt="">
+	        	</figure>
+	        	<div class="text">
+	        		<h2>Javier Hernandez Mancera</h2>
+	        		<a href="#">mancera@gmail.com</a>
+	        		<p>Ciudad de México <br>
+	        		   445432263
+	        		</p>
+	        	</div>
+	          </div> 
+	          <div class="contentDetailsPhoto">
+	          	<article>
+	          		<p>Nombre de la fotografía</p>
+	          		<h4>Toros y toreros y toritos</h4>
+	          	</article>
+	            <hr class="clear">
+	          	<article>
+	          		<p>Ficha Técnica</p>
+	          		<table>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          			<tr>
+	          				<td>Cámara</td>
+	          				<td>Nikkon</td>
+
+	          			</tr>	
+	          			<tr>
+	          				<td>Lente</td>
+	          				<td> 80-150mm</td>
+	          			</tr>
+	          		</table>
+	          	</article>
+	          	<article>
+	          		<p>Folio de la fotofrafía</p>
+	          		<span>HYDCSDRDESX</span>
+	          	</article>
+	          </div>			
+        </div>
+
+     </div>
+  </div>
+</div>
+</body>
+</html>

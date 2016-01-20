@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Canon</title>
-		<link rel="stylesheet" href="<?php echo URL::base(); ?>assets/css/style.css">
+		<link rel="stylesheet" href="<?php echo URL::base(); ?>assets/css/style_administrator.css">
 	</head>
 	<body>
 		<div class="headLogin">

@@ -1,0 +1,273 @@
+
+.mainCreateCompetition{
+    background: $gray1;
+    margin: 0 auto 66px;
+    padding: 9px 18px; 
+    width: 100%;
+
+    section{
+        display: table;
+        margin: 36px auto;
+        max-width: 1180px;
+        width: 100%;
+        padding: 0 36px;
+        input{
+
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        font-weight: lighter;
+        padding: 9px;
+        }
+         article:nth-child(1){
+            width: 100%;
+            margin-bottom: 24px;
+            span{
+                background: $redNormal;
+                border-radius: 50%;
+                color: white;
+                font-size: 16px;
+                padding: 8px 11px;
+                vertical-align: text-bottom;
+
+            }
+            h2{
+                font-weight: 100;
+                font-size: 22px;
+                color: $gray4;
+                display: inline-block;
+                margin: 4px;
+            }
+        }
+     } 
+
+    section:nth-child(1){
+       
+        article:nth-child(2){
+            float: left;
+            margin-bottom: 18px;
+            padding:0 24px;
+            width: 40%;
+            label, input{
+                width: 100%; 
+            }
+            input{
+                margin-bottom: 18px;
+            }
+        }
+        article:nth-child(3){
+             float: left;
+             padding: 0 24px;
+             width: 60%;
+             label, textarea{
+                width: 100%;
+
+             }
+             textarea{
+              
+                border: 1px solid #e6e6e6;
+                border-radius: 3px;
+                font-weight: lighter;
+                padding: 9px; 
+             }
+        }
+     }   
+    section:nth-child(2){
+       article:nth-child(2){
+            float: left;
+            margin-bottom: 18px;
+            padding:0 24px;
+            width: 40%;
+            label, input{
+                width: 100%; 
+            }
+            input{
+                margin-bottom: 18px;
+            }
+        }
+       article:nth-child(3){
+        float: left;
+        padding: 0 24px;
+        width: 60%;
+        font-weight: 100;
+        > div{
+          margin-bottom: 36px;
+        }
+        p{
+            margin: 0;
+        }
+        label:nth-child(1){
+            margin: 0 0 9px; 
+        }
+        button:nth-child(3){
+            background: $redLight;
+            border-radius: 4px;
+            border: 1px solid $redNormal;
+            color: $redNormal;
+            font-weight: bold;
+            height: 45px;
+            transition: all .4s;
+            &:hover{
+                color: white;
+                background: $redNormal;
+            }
+        }
+        p:nth-child(4){
+            color: $redNormal;
+        }
+       }
+       .premios{
+        > input{
+            margin: 0 18px;
+           }
+          .winners{
+            // margin: 0;
+            // padding: 0;
+            float: right;
+            margin-bottom: 9px;
+            span{
+                color: #f9ba15;
+                float: left;
+                font-size: 40px;
+                height: 40px;
+                position: relative;
+                width: 70px;
+                margin-top: -12px;
+                b{
+                    @include centerAbsolute;
+                    color: white;
+                    font-size: 16px;
+                    height: 16px;
+                    width: 16px;
+                    text-align: center;
+                }
+
+               }
+           }
+       }
+       .mencion{
+        margin-top: 18px;
+        span{
+            color: $winner;
+            font-size: 27px;
+        }
+        p{
+            padding: 10px 0 0;
+        }
+       }
+
+    }
+    section:nth-child(3){
+         article{
+            div{
+                height: 220px;
+                margin-bottom: 36px;
+                label{
+                    display: block;
+                }
+                input{
+                   background: none;
+                }
+
+                span{
+                    overflow: hidden;
+                    text-align: center;
+                    border-radius: 4px;
+                    border: 1px solid $gray2;
+                    color: $redNormal;
+                    float: left;
+                    font-size: 52px;
+                    padding:9px ;
+                    position:relative;
+                    width: 40%;
+                    input[type="file"]{
+                        top: 0;
+                        height: 100%;
+                        opacity:0;
+                        position: absolute;
+                        width: 100%;
+                        z-index: 12;
+                        cursor: pointer;
+                    }
+                    p{
+                        font-size: 13px;
+                        text-align: center;
+                        margin: 0;
+                        padding: 0;
+                        text-decoration: underline;
+                    }
+                   
+                }
+                .imagenCargada{
+                  color: rgba(255, 255, 255, .77);
+                  background: url(../assets/images/profileGeneric.png) no-repeat center center; 
+                }   
+                div{
+                  width: 60%;
+                  float: left;
+                  padding: 9px;
+                  input{
+                    margin-bottom: 9px;
+                    width: 100%;
+                  }
+                  input:nth-child(2){
+                    height: 60px;
+                  }
+                }
+            }
+            > div:last-child{
+                padding: 54px 36px 0;
+                border-radius: 4px;
+                border: 2px solid $redNormal;
+                background: $redLight;
+                text-align: center;
+                span{
+                    border: none;
+                }
+                a {
+                    color: $redNormal;
+                    span{
+                        font-size: 36px;
+                        width: 100%;
+
+                    }
+                    p{
+                        
+                        padding:0;
+                        font-weight: 100;
+                        font-size: 14px;
+                        display: block;
+                    }
+                }
+            }
+         }
+    }
+
+
+
+       ul.pagination{
+        display: block; 
+        margin: 36px auto;
+        width: 166px;
+        a{
+            color: $color3
+        }
+       }// pagination ends
+ > button{
+    background: #e51919 none repeat scroll 0 0;
+    border-radius: 20px;
+    border: 0 none;
+    color: white;
+    display: block;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 auto 36px;
+    padding: 8px 23px;
+    width: 200px;
+    &:hover{
+        background: $redLight;
+    }
+}
+
+}//Main  ends---------------------->
+
+

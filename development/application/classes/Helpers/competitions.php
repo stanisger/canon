@@ -10,8 +10,18 @@ class Helpers_Competitions
     	return '<b>'.$club->name.'</b> '.$club->state;
     }
 
-    static function MemberByCompetition($foreign_key)
+    /*static function MemberByCompetition($foreign_key)
     {
     	
+    }*/
+
+    static function checkStatus($finish_date){    
+        $date = strtotime(date("Y-m-d H:i:00",time()));
+        $check_date = strtotime($finish_date);
+        if($date > $check_date){
+                return true;
+        }else{
+            return false;
+        }
     }
 }
