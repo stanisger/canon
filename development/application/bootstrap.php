@@ -108,7 +108,7 @@ Kohana::$environment = ($_SERVER['SERVER_NAME'] == "localhost")
 Kohana::init(array(
 			'base_url' => (Kohana::$environment==Kohana::DEVELOPMENT)
 							? 'http://localhost/canon/development/'
-							: '',
+							: 'http://cannon.publicidadenlinea.com/',
 ));
 
 /**
@@ -138,10 +138,19 @@ Kohana::modules(array(
  */
 Route::set('administrator', '<directory>(/<controller>(/<action>(/<id>)))',
 		array(
-				'directory' => 'administrator|club',
+				'directory' => 'administrator',
 		))
 		->defaults(array(
 				'controller' => 'clubs',
+				'action'     => 'index',
+		));
+
+Route::set('club', '<directory>(/<controller>(/<action>(/<id>)))',
+		array(
+				'directory' => 'club',
+		))
+		->defaults(array(
+				'controller' => 'competitions',
 				'action'     => 'index',
 		));
 		

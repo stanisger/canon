@@ -13,7 +13,7 @@ class Controller_Club_Login extends Controller_Core_Club {
 	public function action_index()
 	{
 		$msg = "";
-		//echo $this->a1->hash('123456');
+		echo $this->a1->hash('123456');
 		if ($this->request->method() === Request::POST)
 		{
 			$post = $this->_validate();
@@ -28,7 +28,6 @@ class Controller_Club_Login extends Controller_Core_Club {
 				}
 			}	
 		}
-		echo $msg;
 		$this->body = View::factory("club/login")->set(array(
 			"msg"	=> $msg
 		));

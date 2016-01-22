@@ -63,6 +63,21 @@ class Model_Clubs extends ORM {
 				->set($data)->save();
 	}
 
+	public function editPerfil($primary_key,$post,$a1)
+	{
+
+		$data = array(
+					'description'	=> $post['description'],
+				);
+		if('' != $post['password']){
+			$data['password'] = $a1->hash($post['password']);
+		}
+		return ORM::factory($this->table_name())
+				->where($this->primary_key(),'=',$primary_key)
+				->find()
+				->set($data)->save();		
+	}
+
 	public function saveImage($primary_key,$logotipo)
 	{
 		return ORM::factory($this->table_name())

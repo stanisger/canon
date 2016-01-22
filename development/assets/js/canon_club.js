@@ -55,9 +55,49 @@ var sendFormClubs = function(){
 			});
 }
 
+var addJury = function (){
+	var contents = parseInt($(".detailsJurado").length);
+	console.log(contents);
+	var next_content = contents + 1;
+	var child = '<div class="col-sm-4 detailsJurado child'+next_content+'">'+
+					'<label>Datos de Jurado</label>'+
+					'<span class="flaticon-arrow68">'+
+						'<input type="file" name="avatar_jury[]">'+
+						'<p id="cargarPic">Cargar Foto</p>'+
+					'</span>'+
+					'<div class="datesJurado col-6-sm">'+
+						'<input type="text" name="name_jury[]" placeholder="Nombre completo*">'+
+						'<input type="text" name="description_jury[]" placeholder="Descripción*">'+
+						'<input type="text" name="url_jury[]" placeholder="URL del sitio (opcional)">'+
+					'</div>'+
+				'</div>';
+	$('.child'+contents).after(child);
+}
+
+
 $(document).ready(function() {
 	/** Clean MODAL **/
 	$('body').on('hidden.bs.modal', '.modal', function () {
 	  $(this).removeData('bs.modal');
 	});
+
+
+	$('#num_winners').keyup(function(event) {
+		var winners = parseInt($(this).val()); var html = '';
+		$('#cont_num_winners').html('');
+		if(winners < 10){
+			for(i=1;i<=winners;i++){
+				console.log(i);
+				var input = '<div class="winners col-sm-7 row">'+
+							'<span class="flaticon-trophy36 col-sm-3"> <b>'+i+'</b></span>'+
+							'<input class="col-sm-9" type="text" placeholder="Premio" name="winners[]">'+
+						'</div>';
+				html += input;
+			}
+			$('#cont_num_winners').html(html);
+		}
+	});
+
+
+
 });

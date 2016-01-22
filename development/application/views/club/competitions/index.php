@@ -1,7 +1,7 @@
 <section class="head">
 	<div class="contentHead">
 		<h2>Concursos</h2>
-		<button>Crear Concurso</button>
+		<button onclick="window.location='<?php echo URL::base(); ?>club/competitions/add';">Crear Concurso</button>
 		<input type="text" placeholder="Buscar">
 		<select name="orden" id="orden">
 			<option value="Ordenar">Ordenar por:</option>

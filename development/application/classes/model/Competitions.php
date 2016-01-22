@@ -72,4 +72,26 @@ class Model_Competitions extends ORM {
 		}*/
 		return $orm->find_all();
 	}
+
+	public function saveData($post,$primary_key,$club)
+	{
+		$orm = ORM::factory($this->table_name())->where($this->primary_key(),'=',$primary_key)->find();
+		$orm->name = $post['name'];
+		$orm->category = $post['category'];
+		$orm->foundations = $post['description'];
+		$orm->init_date = $post['init_date'];
+		$orm->finish_date = $post['finish_date'];
+		$orm->num_honorific = $post['num_honorific'];
+		$orm->date = date('Y-m-d');
+		$orm->fk_club = $club;
+		$orm->status = 'Activo';
+		return $orm->save();
+	}
+
+	public function updateFile($file,$primary_key)
+	{
+		$orm = ORM::factory($this->table_name())->where($this->primary_key(),'=',$primary_key)->find();
+		$orm->file = $file;
+		return $orm->save();
+	}
 }

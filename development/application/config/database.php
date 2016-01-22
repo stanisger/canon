@@ -34,10 +34,10 @@ switch(Kohana::$environment)
 					'type'       => 'MySQLi',
 					'connection' => array(
 
-						'hostname'   => '',
-						'database'   => '',
-						'username'   => '',
-						'password'   => '',
+						'hostname'   => '50.62.78.136',
+						'database'   => 'dbcannon',
+						'username'   => 'usrcannon',
+						'password'   => '4dTs7a',
 						'persistent' => FALSE,
 					),
 					'table_prefix' => '',

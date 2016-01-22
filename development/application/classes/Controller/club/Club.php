@@ -33,7 +33,7 @@ class Controller_Club_Club extends Controller_Core_Club{
 			$response = array('message'=>'Por favor proporcione todos los datos oblogatorios (*)','save'=>FALSE);
 			if($post->check()){
 				$response = array('message'=>'Ocurrio un error, por favor verifique la información.','save'=>FALSE);
-				if($this->modelClubs->saveData($primary_key,$post,$this->a1)){
+				if($this->modelClubs->editPerfil($primary_key,$post,$this->a1)){
 					$response = array('message'=>'Club editado  correctamente.','save'=>TRUE);
 					if(0 < count($_FILES)){
 						$path = DOCROOT.'assets/images/clubs/';
@@ -54,5 +54,10 @@ class Controller_Club_Club extends Controller_Core_Club{
 					"club"	=> $this->modelClubs->getById($primary_key),
 				));
 		}
+	}
+
+	public function validate_post()
+	{
+		return Validation::factory($_POST);
 	}
 }
