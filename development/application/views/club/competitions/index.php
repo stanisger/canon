@@ -36,31 +36,29 @@
 
 				switch ($competition->status) {
 					case 'Pendiente':
-							$classes = 'flaticon-check12 activeStatus';
+							$classes = '<span class="flaticon-check12 activeStatus"></span>'; $status = false;
 						break;
 					case 'Activo':
-							$classes = 'flaticon-close7'; 
+							$classes = '<span class="flaticon-close7"></span>'; $status = true;
 						break;
 					case 'Rechazado':
-							$classes = 'flaticon-chronometer';
+							$classes = '<span class="flaticon-chronometer"></span>'; $status = false;
+						break;
+					case 'Finalizado':
+							$classes = '<p class="active">Finalizado</p>'; $status = true;
 						break;
 					default:
 						# code...
 						break;
 				}
 			?>
-			<?php if($status): ?>
-				<p class="active">Finalizado</p>
-			<?php else: ?>
-			<span class="<?php echo $classes; ?>" ></span>
-			<!--<span class="flaticon-pencil86" ></span>-->
-			<?php endif; ?>
+			<?php echo $classes; ?>
 		</td>
 		<td>
-			<?php if(!$status): ?>
-			<a href="galería.html" class="flaticon-images11 activeStatus" ></a>
-			<a href="galería.html" class="flaticon-trophy36" ></a>
-		<?php endif; ?>
+			<?php if($status): ?>
+			<a href="<?php echo URL::base(); ?>club/competitions/galery/<?php echo $competition->id_competition; ?>" class="flaticon-images11 activeStatus" ></a>
+			<a href="<?php echo URL::base(); ?>club/competitions/galery/<?php echo $competition->id_competition; ?>" class="flaticon-trophy36" ></a>
+			<?php endif; ?>
 		</td>
 	</tr>
 	<?php endforeach; ?>

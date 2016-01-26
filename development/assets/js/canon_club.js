@@ -62,7 +62,7 @@ var addJury = function (){
 	var child = '<div class="col-sm-4 detailsJurado child'+next_content+'">'+
 					'<label>Datos de Jurado</label>'+
 					'<span class="flaticon-arrow68">'+
-						'<input type="file" name="avatar_jury[]">'+
+						'<input type="file" name="avatar_jury'+next_content+'">'+
 						'<p id="cargarPic">Cargar Foto</p>'+
 					'</span>'+
 					'<div class="datesJurado col-6-sm">'+

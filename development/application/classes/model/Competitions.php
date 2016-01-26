@@ -39,6 +39,12 @@ class Model_Competitions extends ORM {
 		return $orm->find_all();
 	}
 
+	public function updateStatus($primary_key,$status){
+		$orm =  ORM::factory($this->table_name())->where('id_competition','=',$primary_key)->find();
+		$orm->status = $status;
+		return $orm->save();
+	}	
+
 	/** CONSULTAR PARA CLUBS */
 	public function getAllByFiltersClub($dataSearch,$primary_key)
 	{
@@ -84,7 +90,7 @@ class Model_Competitions extends ORM {
 		$orm->num_honorific = $post['num_honorific'];
 		$orm->date = date('Y-m-d');
 		$orm->fk_club = $club;
-		$orm->status = 'Activo';
+		$orm->status = 'Pendiente';
 		return $orm->save();
 	}
 

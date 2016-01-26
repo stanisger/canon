@@ -68,13 +68,13 @@
 				<div class="col-sm-4 detailsJurado child1">
 					<label>Datos de Jurado</label>
 					<span class="flaticon-arrow68">
-						<input type="file" name="avatar_jury[]">
+						<input type="file" name="avatar_jury1">
 						<p id="cargarPic">Cargar Foto</p>
 					</span>
 					<div class="datesJurado col-6-sm">
 						<input type="text" name="name_jury[]" placeholder="Nombre completo*">
 						<input type="text" name="description_jury[]" placeholder="Descripción*">
-						<input type="text" name="url_juty[]" placeholder="URL del sitio (opcional)">
+						<input type="text" name="url_jury[]" placeholder="URL del sitio (opcional)">
 					</div>
 				</div>
 				

@@ -78,7 +78,7 @@ class Controller_Club_Competitions extends Controller_Core_Club{
 					}
 					//Guardamos numero de personas que integran el jurado
 					$persons = count($post['name_jury']);
-					print_r($_FILES);
+					//print_r($_FILES);
 					for($i=0;$i<$persons;$i++)
 					{
 						$data = array(
@@ -88,21 +88,22 @@ class Controller_Club_Competitions extends Controller_Core_Club{
 
 							);
 						$jury = $this->modelJury->saveData($competition,$data);
-						/*if($jury){
-							if(0 < count($_FILES)){
+						if($jury){
+							$num_file = $i + 1;
+							if(0 < count($_FILES['avatar_jury'.$num_file])){
 								$path = DOCROOT.'assets/images/jury/';
-								$file = rand(1,100).'_'.str_replace(' ','_',$_FILES['avatar_jury'][$i]['name']);
-								$upload = Helpers_Image::upload($_FILES['avatar_jury'][$i], $file, $path);
+								$file = rand(1,100).'_'.str_replace(' ','_',$_FILES['avatar_jury'.$num_file]['name']);
+								$upload = Helpers_Image::upload($_FILES['avatar_jury'.$num_file], $file, $path);
 								if($upload)
 								{
 									$this->modelJury->updateFile($file,$jury);
 								}
 							}
-						}*/
+						}
 					}
 
 					//print_r($post);
-					//$this->redirect(URL::base().'club/competitions');
+					$this->redirect(URL::base().'club/competitions');
 				}
 			}
 			
@@ -110,11 +111,18 @@ class Controller_Club_Competitions extends Controller_Core_Club{
 		$this->body = View::factory('club/competitions/add');
 	}
 
-	public function action_detail(){
+	/*public function action_detail(){
 		$primary_key = $this->request->param('id');
-
-		
 		$this->body = View::factory('club/competitions/detail')->set(array(
+				'competition'	=> $this->modelCompetitions->getById($primary_key),
+
+			));
+	}*/
+
+	public function action_galery()
+	{
+		$primary_key = $this->request->param('id');
+		$this->body = View::factory('club/competitions/galery')->set(array(
 				'competition'	=> $this->modelCompetitions->getById($primary_key),
 
 			));

@@ -11,4 +11,11 @@ class Model_Awards extends ORM {
 				'type'				=> $type,
 			))->save();
 	}
+
+	public function getWinnerByCompetition($fk_competition){
+		return ORM::factory($this->table_name())	
+				->where('fk_competition','=',$fk_competition)
+				->where('type','=','winner')
+				->find_all();
+	}
 }

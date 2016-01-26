@@ -25,6 +25,7 @@ var reloadClubs = function(){
 	});
 }
 
+
 var sendFormClubs = function(){
 	$('form#add_club, form#edit_club').submit(function(event) {
 				event.preventDefault();
@@ -105,6 +106,13 @@ var approve = function(path){
 	});
 	$('#myModal1').on('loaded.bs.modal', function (e) {		
 		
+	});
+}
+
+
+var changeStatusCompetition = function(id_competition,status){
+	$.post(URL+'administrator/competitions/status',{id_competition:id_competition,status:status},function(){
+		location.reload();
 	});
 }
 /** end competitions */

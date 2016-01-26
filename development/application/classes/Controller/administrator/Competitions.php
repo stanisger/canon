@@ -3,10 +3,16 @@
 class Controller_Administrator_Competitions extends Controller_Core_Administrator{
 
 	public $modelCompetitions; 
+	public $modelClubs;
+	public $modelAwards;
+	public $modelJury;
 	public function before()
 	{
 		parent::before();
 		$this->modelCompetitions = new Model_Competitions;
+		$this->modelClubs = new Model_Clubs;
+		$this->modelAwards = new Model_Awards;
+		$this->modelJury = new Model_Jury;
 		$this->rows_by_page = 2;
 	}
 
@@ -47,12 +53,21 @@ class Controller_Administrator_Competitions extends Controller_Core_Administrato
 
 	public function action_detail(){
 		$primary_key = $this->request->param('id');
-
-		
+		$competition = $this->modelCompetitions->getById($primary_key);
 		$this->body = View::factory('administrator/competitions/detail')->set(array(
-				'competition'	=> $this->modelCompetitions->getById($primary_key),
-
+				'competition'	=> $competition,
+				'club'			=> $this->modelClubs->getById($competition->fk_club),
+				'winners'		=> $this->modelAwards->getWinnerByCompetition($competition->id_competition),
+				'jury'			=> $this->modelJury->getByCompetition($competition->id_competition),
 			));
+	}
+
+	public function action_status()
+	{
+		$this->simple = TRUE;
+		$primary_key = $_POST['id_competition'];
+		$status = $_POST['status'];
+		$this->modelCompetitions->updateStatus($primary_key,$status);
 	}
 
 
