@@ -153,6 +153,16 @@ Route::set('club', '<directory>(/<controller>(/<action>(/<id>)))',
 				'controller' => 'competitions',
 				'action'     => 'index',
 		));
+
+
+Route::set('club', '<directory>(/<controller>(/<action>(/<id>)))',
+		array(
+				'directory' => 'member',
+		))
+		->defaults(array(
+				'controller' => 'login',
+				'action'     => 'index',
+		));
 		
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(

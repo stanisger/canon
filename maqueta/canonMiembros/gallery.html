@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canon</title>
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+     <!-- // galllery -->
+    <script src="assets/js/jquery.collagePlus.js"></script>
+    <script src="assets/js/jquery.removeWhitespace.js"></script>
+    <script src="assets/js/jquery.collageCaption.js"></script>
+    <script type="text/javascript">
+
+    // All images need to be loaded for this plugin to work so
+    // we end up waiting for the whole window to load in this example
+    $(window).load(function () {
+        $(document).ready(function(){
+            collage();
+            $('.Collage').collageCaption();
+        });
+    });
+
+
+    // Here we apply the actual CollagePlus plugin
+    function collage() {
+        $('.Collage').removeWhitespace().collagePlus(
+            {
+                'fadeSpeed'     : 28000,
+                'targetHeight'  : 400,
+                'effect'        : 'effect-3',
+                'direction'     : 'vertical'
+            }
+        );
+    };
+
+    // This is just for the case that the browser window is resized
+    var resizeTimer = null;
+    $(window).bind('resize', function() {
+        // hide all the images until we resize them
+        $('.Collage .Image_Wrapper').css("opacity", 0);
+        // set a timer to re-apply the plugin
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(collage, 600);
+    });
+
+    </script>
+</head>
+<body>
+<header>
+	<div class="content">
+	  <a href="index.html">
+		<img src="assets/images/Canon-Logo-Black.png" alt="">
+	 </a>
+		<button>Cerrar sesión</button>
+      <a  href="#" data-toggle="modal" data-target="#myModal" class="edit">
+      	Manuel Cárcamo
+      </a>	
+	 <figure>
+        	<img src="assets/images/photografer.jpg" alt="">
+      </figure>
+	</div>
+</header>
+<section class="nav">
+  <div class="contentNav">
+	<button><span class="flaticon-setup6"></span>Concursos</button>
+	<button class="active"><span class="flaticon-images11"></span>Fotografías</button>
+	</div>
+</section> 
+<section class="head">
+  <div class="contentHead">
+	<h2>FOTOGRAFÍAS</h2> 
+     <select name="ordenar" id="ordenar" placeholder=" Agrupar por">
+       <option value="option" > Agrupar por</option>
+     	
+     </select>
+  </div>	
+</section>
+<div class="mainGallery">
+
+	<div class="galleryContent">
+	 <section class="Collage effect-parent">
+	       <div class="Image_Wrapper" data-caption="
+	         <h3>Nombre de la fotografia</h3>
+	         <h4>Primer Lugar</h4>
+	         <h5>Nombre del concurso</h5>
+             <p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+	       ">
+	       <span class="winnerPicture flaticon-trophy36"></span>
+	         <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
+	          <img src="https://sbphotospecial.files.wordpress.com/2013/03/world-press-photo-2013-water-buffalo_64501_600x4501.jpg">
+	         </a>
+	       </div>
+	       
+
+	        <div class="Image_Wrapper" data-caption="
+	         <h3>Nombre de la fotografia</h3>
+	         <h4>Primer Lugar</h4>
+	         <h5>Nombre del concurso</h5>
+             <p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+	       ">
+	       <span class="winnerPicture flaticon-award52"></span>
+	         <a  href="#" data-toggle="modal" data-target=".bs-example-modal-lg2">
+	           <img src="http://www.exposureguide.com/images/photography-ebooks/trick-photography-abstract-face-ebook.jpg">
+	         </a>
+	        </div>
+
+
+	      <div class="Image_Wrapper" data-caption="
+	         <h3>Nombre de la fotografia</h3>
+	         <h4>Primer Lugar</h4>
+	         <h5>Nombre del concurso</h5>
+             <p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+	       ">
+	          <a>
+	            <img src="https://nyoobserver.files.wordpress.com/2015/12/10380751_1555369474725820_2515898643941177336_n.jpg?quality=80&w=635">
+	           </a>
+	         </div>
+	               
+
+	          <div class="Image_Wrapper" data-caption="
+		         <h3>Nombre de la fotografia</h3>
+		         <h4>Primer Lugar</h4>
+		         <h5>Nombre del concurso</h5>
+	             <p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+		       ">
+	            <a>
+	              <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/873/cache/your-shot-rapids-bosnia-herzegovina_87316_600x450.jpg">
+	             </a>
+	          </div>
+
+
+	          <div class="Image_Wrapper" data-caption="
+		         <h3>Nombre de la fotografia</h3>
+		         <h4>Primer Lugar</h4>
+		         <h5>Nombre del concurso</h5>
+	             <p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+		       ">
+	            <a>
+	              <img src="http://i.dailymail.co.uk/i/pix/2013/12/02/article-2516663-19C53EDE00000578-413_964x616.jpg">
+	            </a>
+	          </div>
+
+	       </section>
+	   
+
+	</div>
+</div>
+<footer>
+	<ul class="row">
+		<li class=" col-md-2"><a href="#">canon.com.mx</li></a>
+		<li class=" col-md-1"><a href="#">Acerca de</li></a>
+		<li class=" col-md-3"><a href="#">Aviso de Privacidad</li></a>
+		<li class=" col-md-1"><a href="#">Contacto</li></a>
+		<li class=" col-md-5">Copyright 2015 Mexicana. Todos los derechos reservados</li>
+	</ul>
+</footer>
+<!-- Modal 1 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Mi perfil</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+        <figure>
+        	<img src="assets/images/photografer.jpg" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-9"> 
+        	<label for="nameClub">Manuel Camarco López</label>
+        	<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum porro assumenda magnam sed quidem explicabo consequuntur velit. Laudantium aliquid adipisci nam deserunt molestias facere, corporis illum obcaecati, voluptatum facilis delectus.</p>
+        </article>
+
+        <div class="contentProfile col-xs-12">
+
+	        <label for="textTwo" class="col-xs-6">DATOS</label>
+	        <label for="textThree" class="col-xs-6">CONTRASEÑA</label>
+	        <p>Rául López 	<br>
+               raul@cuartoscuro.com <br>
+               tel : 636636363
+	        </p>
+	        <p>4343D4SX</p>
+	    </div> 
+	    <div class="contentProfileClubes col-xs-12">
+	    <h3>CLUBES A  LOS QUE PERTENECE</h3>
+           <div class="ProfileClubes col-xs-4">
+	           	<figure><img src="assets/images/profileGeneric.png" alt=""></figure>
+	           	<p>Nombre del club</p>
+	           	<div class="text">
+	           		Matrícula
+	           		<strong>2121212</strong>
+	           	</div>
+           </div>
+           <div class="ProfileClubes col-xs-4">
+	           	<figure><img src="assets/images/profileGeneric.png" alt=""></figure>
+	           	<p>Nombre del club</p>
+	           	<div class="text">
+	           		Matrícula
+	           		<strong>2121212</strong>
+	           	</div>
+           </div>
+           <div class="ProfileClubes col-xs-4">
+	           	<figure><img src="assets/images/profileGeneric.png" alt=""></figure>
+	           	<p>Nombre del club</p>
+	           	<div class="text">
+	           		Matrícula
+	           		<strong>2121212</strong>
+	           	</div>
+           </div>
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"
+        data-toggle="modal" data-target="#myModal2"
+        >Editar Perfil <span class="flaticon-edit45"></span></button>
+      </div>
+    </div>
+  </div> 
+</div>
+<!-- Modal 2 -->
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content modalclubesBody">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" class="flaticon-forbidden15"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Editar Perfil</h4>
+      </div>
+      <div class="modal-body profileClub row">
+        <article class="col-sm-3">
+        <a class="flaticon-pencil86" href="#">
+        	<input type="file" name="upload">
+        </a>
+        <figure>
+        	<img src="assets/images/photografer.jpg" alt="">
+        </figure>
+        </article>
+        <article class="col-sm-9"> 
+        	<input type="text" placeholder="Nombre completo">
+        	<input type="text" placeholder="Descripción">
+       </article>
+	
+        <div class="contentProfileEdit col-xs-12">
+          <div class="datesProfileMember col-xs-6">
+          	  <label for="dates">DATOS</label>
+          	  <input type="email" placeholder="Correo electrónico*">
+          	  <input type="text" placeholder="Ciudad*">
+          	  <input type="telephone" placeholder="Teléfono*">
+          </div>
+          <div class="datesProfileMember col-xs-6">
+          	  <label for="password">CONTRASEÑA</label>
+          	  <input type="password" placeholder="Contraseña*">
+          	   <input type="password" placeholder="Confirmar contraseña*">
+          </div>
+	    </div> 
+	    <div class="contentProfileClubes col-xs-12">
+	    <h3>CLUBES A  LOS QUE PERTENECE</h3>
+           <div class="ProfileClubes col-xs-4">
+	           	<article>
+			        <a class="flaticon-pencil86" href="#">
+			        	<input type="file" name="upload">
+			        </a>
+			        <figure>
+			        	<img src="assets/images/profileGeneric.png" alt="">
+			        </figure>
+			    </article>
+	           	<input type="text" placeholder="Nombre del club">
+	           	<div class="textEdit">
+	           		Matrícula
+	           		<input type="text">
+	           	</div>
+           </div>
+           <div class="ProfileClubes col-xs-4">
+	           	<button class="addClub">
+	           		<span class="flaticon-round69"></span>
+	           		<p>Agregar <br>
+                       nuevo Club
+	           		</p>
+	           	</button>
+           </div>
+           
+
+	    </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+
+.mainCreateCompetition{
+  width: 100%;
+  height: auto;
+  background: $gray1;
+  margin-bottom: 90px;
+  section{
+    width: 1180px;
+    margin: 0 auto;
+    h4{
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    article{
+      > p{
+            font-size: 16px;
+            padding-right: 28px;
+        }
+     }   
+  }
+   section:nth-child(1){
+    padding: 28px 36px;
+    article{
+        width: 50%;
+        float: left;
+        h5{
+            font-size: 22px;
+            margin: 9px 0;
+            padding: 0;
+        }
+        aside{
+            width: 50%;
+            float: left;
+        }
+        button{
+            margin-top: 24px; 
+            background: #e51919 none repeat scroll 0 0;
+            border: 0 none;
+            border-radius: 20px;
+            color: white;
+            font-size: 17px;
+            font-weight: 300;
+            padding: 7px 30px;
+            transition: opacity .2s;
+            &:hover{
+                opacity: .7;
+            }
+        }
+    }
+    aside{
+        background: white;
+    
+        border: 4px solid $gray1;
+        padding: 9px 1px;
+        margin: 0;
+        span{
+            color: $winner;
+            position: relative;
+            font-size: 40px;
+            b{
+                color: white;
+                position: absolute;
+                font-size: 13px;
+                width: 8px;
+                height: 31px;
+                @include centerAbsolute ;
+            }
+
+        }
+        .textWinnerMembers{
+            h5{
+                font-size: 18px;
+                margin: 0;
+            }
+            p{
+                font-size: 12px;
+               line-height: 15px;
+            }
+        }
+    }
+   }
+   section.autor{
+    background: #f6edd0;
+    color: #bea99c;
+    padding:  12px 18px;
+   }
+   section.jurado{
+      padding: 9px 36px;
+      img{
+        padding: 0;
+      }
+      .textJuradoMembers{
+        p{
+            font-size: 13px;
+            line-height: 14px;
+        }
+      }
+   }
+   section.pregunta{
+      padding: 18px 36px;
+      text-align: right;
+       a{
+            font-size: 18px;
+            line-height: 14px;
+            color: $gray3;
+            text-decoration: underline;
+        }
+            span{
+                color: $winner;
+                text-decoration: none;
+                font-size: 24px;
+            }
+   }
+  section.dowloadPhoto{
+    margin: 36px auto;
+    article{
+        div:nth-child(1){
+            width: 100;
+            background: $gray2;
+            padding: 18px 24px 9px;
+            color: $color3;
+            font-size:  20px;
+        }
+        div:nth-child(2){
+            padding: 18px 24px 9px;
+            background: white;
+            margin: 0;
+            label{
+               font-size: 20px;
+               margin-bottom: 9px;
+            }
+
+             input{
+            
+                border-radius: 3px;
+                border: 1px solid $color6;
+                font-weight: lighter;
+                padding: 9px ;
+                width: 100%;
+                margin-bottom: 9px;
+               }
+               aside{
+                h2{
+                    font-size: 20px;
+                    margin-bottom: 9px;
+                    height: 35px;
+                }
+                label{
+                    width: 30%;
+                    font-size: 14px;
+                    float: left;
+                }
+                input{
+                    width: 70%;
+                    float: left;
+                }
+                textarea{
+                    border: 1px solid gray;
+                    border-radius: 8px;
+                    height: 130px;
+                    width: 100%;
+                    padding: 18px;
+                }
+            }
+            .download{
+                 border: 1px solid gray;
+                 overflow: hidden;
+                    border-radius: 8px;
+                    height: 130px;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0) url("../assets/images/profileGeneric.png") no-repeat scroll center center;
+                    color: rgba(255, 255, 255, 0.77);
+                    -webkit-background-size: cover;
+                  -moz-background-size: cover;
+                  -o-background-size: cover;
+                  background-size: cover;
+                  position: relative;
+                  text-align: center;
+                  span{
+                    height: 100%;
+                    width: 100%;
+                    font-size: 60px;
+                    color: red;
+                     border-radius: 8px;
+                    @include centerAbsolute;
+                  }
+                  p{
+                    font-size: 19px;
+                    text-decoration: underline;
+                    color:red;
+                    margin-top: 50px;
+                  }
+                  input[type="file"]{
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;
+                    z-index: 12;
+                    opacity: 0;
+                    border-radius: 8px;
+                    @include centerAbsolute;
+
+                  }
+
+            }
+        }
+    }
+  } 
+
+  section.addPhoto{
+    background: $redLight;
+    font-size: 20px;
+    text-align: center;
+    padding:  12px 18px;
+    a{
+         color: $redNormal;
+         transition: opacity .2s;
+         &:hover{
+            opacity: .7;
+         }
+    }
+   }
+   > button{
+     background: #e51919 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 20px;
+    color: white;
+    display: block;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 36px auto 0;
+    padding: 8px 23px;
+    width: 200px;
+   }
+}//Main  ends---------------------->
+
+
