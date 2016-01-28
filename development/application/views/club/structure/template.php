@@ -26,10 +26,19 @@
 				</div>
 			</div>
 		</div>
+		<!-- Large modal -->
+		<div class="modal fade bs-example-modal-lg2" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content row descriptionPhoto" style="display:none;">
+					
+				</div>
+			</div>
+		</div>
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="<?php echo URL::base(); ?>assets/js/jquery.1.9.1.min.js"></script>-->
 	<script type="text/javascript" src="<?php echo URL::base(); ?>assets/js/bootstrap.js"></script>
 	<script>URL = '<?php echo URL::base(); ?>';</script>
 	<script type="text/javascript" src="<?php echo URL::base(); ?>assets/js/canon_club.js"></script>
+	<?php echo Assets::scripts(); ?>
 </html>

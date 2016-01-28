@@ -22,7 +22,7 @@
 	<div class="contentDetails row">
 		<h6  class="col-xs-12">Bases del Concurso</h6>
 		<p  class="col-xs-12"><?php echo $competition->foundations; ?></p>
-		<button onclick="wkindow.location='<?php echo URL::base(); ?>assets/images/competition/<?php echo $competition->file; ?>'">Descarga Bases/PDF</button>
+		<button onclick="window.location='<?php echo URL::base(); ?>assets/images/competitions/<?php echo $competition->file; ?>'">Descarga Bases/PDF</button>
 		<h6 class="col-xs-12">Premios</h6>
 		<?php $i=1; foreach($winners as $winner): ?>
 		<article class="winner col-xs-4">

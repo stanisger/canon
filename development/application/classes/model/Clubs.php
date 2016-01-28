@@ -97,4 +97,27 @@ class Model_Clubs extends ORM {
 				'status'		=> 'Inactivo',
 			))->save();
 	}
+
+	public function getByMemberActive($fk_member)
+	{
+		$select = 'SELECT 
+					c.id_club, c.name , c.logotipo , m.enrollment
+					FROM '.$this->table_name().' as c
+					INNER JOIN my_clubs as m
+					ON c.id_club = m.fk_club
+					WHERE m.status = "Activo"
+					AND m.fk_member = '.$fk_member;
+		return DB::query(Database::SELECT,$select)->as_object()->execute();
+	}
+
+	public function getByMemberInactive()
+	{
+		$select = 'SELECT 
+					c.id_club, c.name
+					FROM '.$this->table_name().' as c
+					LEFT JOIN my_clubs as m
+					ON c.id_club = m.fk_club
+					WHERE m.fk_club is NULL';
+		return DB::query(Database::SELECT,$select)->as_object()->execute();
+	}
 }

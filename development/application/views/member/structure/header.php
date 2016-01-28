@@ -5,7 +5,7 @@
 	 </a>
 		<button>Cerrar sesión</button>
       <a  href="<?php echo URL::base(); ?>member/member/" data-toggle="modal" data-target="#myModal" class="edit">
-      	Manuel Cárcamo
+      	<?php echo $userdata->name; ?>
       </a>	
 	 <figure>
 	 		<?php if('' == $userdata->avatar): ?>

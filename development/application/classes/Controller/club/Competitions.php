@@ -5,12 +5,16 @@ class Controller_Club_Competitions extends Controller_Core_Club{
 	public $modelCompetitions; 
 	public $modelAwards;
 	public $modelJury;
+	public $modelGallery;
+	public $modelMembers;
 	public function before()
 	{
 		parent::before();
 		$this->modelCompetitions = new Model_Competitions;
 		$this->modelAwards = new Model_Awards;
 		$this->modelJury = new Model_Jury;
+		$this->modelGallery = new Model_Gallery;
+		$this->modelMembers = new Model_Members;
 		$this->rows_by_page = 2;
 		if($this->authention == TRUE AND !$this->a1->logged_in()){
 			$this->redirect(URL::base()."club/login");
@@ -119,12 +123,25 @@ class Controller_Club_Competitions extends Controller_Core_Club{
 			));
 	}*/
 
-	public function action_galery()
+	public function action_gallery()
 	{
+		$js = array('jquery.collagePlus.js','jquery.removeWhitespace.js','jquery.collageCaption.js','script_gallery.js');
+		Assets::script($js);
+		
 		$primary_key = $this->request->param('id');
-		$this->body = View::factory('club/competitions/galery')->set(array(
+		$this->body = View::factory('club/competitions/gallery')->set(array(
 				'competition'	=> $this->modelCompetitions->getById($primary_key),
+				'gallery'	=> $this->modelGallery->getByCompetetion($this->userdata->id_club),
+			));
+	}
 
+	public function action_preview()
+	{
+		$id_gallery = $this->request->param('id');
+		$photo = $this->modelGallery->getById($id_gallery);
+		$this->body = View::factory('club/competitions/preview_photo')->set(array(
+				"gallery"	=> $photo,
+				'member'	=> $this->modelMembers->getById($photo->fk_member),
 			));
 	}
 

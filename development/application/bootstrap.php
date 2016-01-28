@@ -155,7 +155,7 @@ Route::set('club', '<directory>(/<controller>(/<action>(/<id>)))',
 		));
 
 
-Route::set('club', '<directory>(/<controller>(/<action>(/<id>)))',
+Route::set('member', '<directory>(/<controller>(/<action>(/<id>)))',
 		array(
 				'directory' => 'member',
 		))

@@ -1,27 +1,36 @@
 <section class="head">
 	<div class="contentHead">
 		<h2>FOTOGRAFÍAS</h2>
-		<select name="ordenar" id="ordenar" placeholder=" Agrupar por">
-			<option value="option" > Agrupar por</option>
-			
+		<select name="ordenar" id="filter_my_gallery" placeholder=" Agrupar por">
+			<option value="option" > Agrupar por Club</option>
+			<?php foreach($clubs as $club): ?>
+				<option value="<?php echo $club->id_club; ?>"><?php echo $club->name; ?></option>
+			<?php endforeach; ?>
 		</select>
 	</div>
 </section>
 <div class="mainGallery">
 	<div class="galleryContent">
 		<section class="Collage effect-parent">
+			<?php foreach($gallery as $row): ?>
 			<div class="Image_Wrapper" data-caption="
-				<h3>Nombre de la fotografia</h3>
-				<h4>Primer Lugar</h4>
-				<h5>Nombre del concurso</h5>
-				<p><strong>Nombre de club | </strong> Categoría | Fecha</p>
+				<h3><?php echo $row->name; ?></h3>
+				<h4><?php echo Helpers_Photographs::CheckWinById($row->id_gallery); ?></h4>
+				<h5><?php echo Helpers_Competitions::dataById($row->fk_competition,'name'); ?></h5>
+				<p>
+				<strong>
+				<?php echo Helpers_Competitions::NameClubByCompetition($row->fk_competition); ?> | </strong> 
+				<?php echo Helpers_Competitions::dataById($row->fk_competition,'category'); ?> | 
+				<?php echo Helpers_Dates::getMonth(Helpers_Competitions::dataById($row->fk_competition,'init_date')); ?></p>
 				">
 				<span class="winnerPicture flaticon-trophy36"></span>
 				<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">
-					<img src="https://sbphotospecial.files.wordpress.com/2013/03/world-press-photo-2013-water-buffalo_64501_600x4501.jpg">
+					<!--<img src="https://sbphotospecial.files.wordpress.com/2013/03/world-press-photo-2013-water-buffalo_64501_600x4501.jpg">-->
+					<img src="<?php echo URL::base(); ?>assets/images/gallery/<?php echo $row->file; ?>">
 				</a>
 			</div>
-			
+			<?php endforeach; ?>
+			<!--
 			<div class="Image_Wrapper" data-caption="
 				<h3>Nombre de la fotografia</h3>
 				<h4>Primer Lugar</h4>
@@ -64,6 +73,7 @@
 					<img src="http://i.dailymail.co.uk/i/pix/2013/12/02/article-2516663-19C53EDE00000578-413_964x616.jpg">
 				</a>
 			</div>
+			-->
 		</section>
 		
 	</div>

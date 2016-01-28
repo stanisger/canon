@@ -10,11 +10,6 @@ class Helpers_Competitions
     	return '<b>'.$club->name.'</b> '.$club->state;
     }
 
-    /*static function MemberByCompetition($foreign_key)
-    {
-    	
-    }*/
-
     static function checkStatus($finish_date){    
         $date = strtotime(date("Y-m-d H:i:00",time()));
         $check_date = strtotime($finish_date);
@@ -23,5 +18,26 @@ class Helpers_Competitions
         }else{
             return false;
         }
+    }
+
+    static function getByClub($fk_club){
+        $modelCompetitions = new Model_Competitions;
+        return $modelCompetitions->getByClub($fk_club);
+    }
+
+    static function dataById($primary_key,$row)
+    {
+        $modelCompetitions = new Model_Competitions;
+        $dataCompetition =  $modelCompetitions->getById($primary_key); 
+        return $dataCompetition->$row;
+    }
+
+    static function NameClubByCompetition($primary_key)
+    {
+        $modelCompetitions = new Model_Competitions;
+        $dataCompetition =  $modelCompetitions->getById($primary_key); 
+        $modelCompetitions = new Model_Clubs;
+        return $modelCompetitions->getById($dataCompetition->fk_club)->name;
+
     }
 }

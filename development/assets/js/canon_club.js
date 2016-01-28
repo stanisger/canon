@@ -3,6 +3,10 @@ var closeModal = function(){
 		$('.modal-content').html('');
 	}
 
+var closeModalLarge = function(){
+		location.reload();
+	}
+
 var perfil = function(path,clean){
 	if(1 == clean)
 		$('#myModal').removeData('bs.modal');
@@ -12,6 +16,17 @@ var perfil = function(path,clean){
 	});
 	$('#myModal').on('loaded.bs.modal', function (e) {		
 		sendFormClubs();
+	});
+}
+
+var preview_image = function(path){
+	
+	$('#myModal3').modal({
+		remote  : path,
+	});
+	$('#myModal3').on('loaded.bs.modal', function (e) {		
+		$('#myModal3').css('display','block');
+		$('#myModal3').children('div').children('div').css('display','block');
 	});
 }
 

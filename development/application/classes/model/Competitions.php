@@ -100,4 +100,13 @@ class Model_Competitions extends ORM {
 		$orm->file = $file;
 		return $orm->save();
 	}
+
+	//Miembros
+	public function getByClub($fk_club)
+	{
+		return ORM::factory($this->table_name())
+					->where('fk_club','=',$fk_club)
+					->where('status','=','Activo')
+					->find_all();
+	}
 }

@@ -56,8 +56,8 @@
 		</td>
 		<td>
 			<?php if($status): ?>
-			<a href="<?php echo URL::base(); ?>club/competitions/galery/<?php echo $competition->id_competition; ?>" class="flaticon-images11 activeStatus" ></a>
-			<a href="<?php echo URL::base(); ?>club/competitions/galery/<?php echo $competition->id_competition; ?>" class="flaticon-trophy36" ></a>
+			<a href="<?php echo URL::base(); ?>club/competitions/gallery/<?php echo $competition->id_competition; ?>" class="flaticon-images11 activeStatus" ></a>
+			<a href="<?php echo URL::base(); ?>club/competitions/gallery/<?php echo $competition->id_competition; ?>" class="flaticon-trophy36" ></a>
 			<?php endif; ?>
 		</td>
 	</tr>
